@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/buttonstyle.uss?fileID=7433441132597879392&amp;guid=17741c07e4d901347aaed8fda636dada&amp;type=3#buttonstyle"/>
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="FRAGMENTOS" name="Titulo" style="height: 280px; -unity-text-align: middle-center; font-size: 50px;"/>
+        <ui:VisualElement style="flex-grow: 1; justify-content: space-evenly; align-items: center; align-self: center; flex-direction: column; flex-wrap: nowrap; padding-bottom: 229px;">
+            <ui:Button text="Button" class="buttonUIStyle buttonStyle" style="white-space: pre; -unity-text-align: upper-center; height: 96px; font-size: 63px; width: 816px;"/>
+            <ui:Button text="Button" class="buttonUIStyle buttonStyle" style="white-space: pre; -unity-text-align: upper-center; height: 96px; font-size: 63px; width: 804px;"/>
+            <ui:Button text="Button" class="buttonUIStyle buttonStyle" style="white-space: pre; -unity-text-align: upper-center; height: 96px; font-size: 63px; width: 822px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

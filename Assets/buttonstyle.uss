@@ -1,0 +1,24 @@
+:root {
+}
+
+.buttonStyle {
+    font-size: 42px;
+    background-color: rgb(238, 172, 208);
+    -unity-font-definition: url("project://database/Library/unity%20default%20resources?fileID=10102&guid=0000000000000000e000000000000000&type=0#LegacyRuntime");
+    color: rgb(0, 0, 0);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    transition-duration: 0.5s;
+}
+
+.buttonStyle:hover {
+    scale: 1.1 1.1 1.1;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgb(255, 109, 109);
+}
