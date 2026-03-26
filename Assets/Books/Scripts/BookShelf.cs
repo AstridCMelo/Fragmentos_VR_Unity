@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class BookShelf: MonoBehaviour
 {
+    public UIController panel;
+
     [SerializeField] private string word;
     private List<char> initialLetters = new List<char>();
     private string currentword;
@@ -112,6 +114,8 @@ public class BookShelf: MonoBehaviour
         if (word == currentword)
         {
             Debug.Log("Interfaz fragmento");
+            panel.ShowImage();
+
         }
     }
 

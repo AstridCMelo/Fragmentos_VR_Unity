@@ -23,17 +23,15 @@ public class OnEnterLibraryArea : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if(xrOriginAngleInicial == 0)
-            {
-                Debug.Log("Colision");
+            Debug.Log("Colision");
 
-                //Bloquear movimiento mientras interactua
-                continuousTurn.SetActive(false);
-                snapTurn.SetActive(true);
-                continuousMove.SetActive(false);
-                leftController.SetActive(false);
-                xrOriginAngleInicial = xrOrigin.rotation.eulerAngles.y;
-            }
+            //Bloquear movimiento mientras interactua
+            continuousTurn.SetActive(false);
+            snapTurn.SetActive(true);
+            continuousMove.SetActive(false);
+            leftController.SetActive(false);
+            xrOriginAngleInicial = xrOrigin.rotation.eulerAngles.y;
+            
         }
 
     }
