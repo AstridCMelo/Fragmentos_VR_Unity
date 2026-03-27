@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class BookShelf: MonoBehaviour
 {
     public UIController panel;
+    public OnEnterLibraryArea interaction;
 
     [SerializeField] private string word;
     private List<char> initialLetters = new List<char>();
@@ -115,7 +116,7 @@ public class BookShelf: MonoBehaviour
         {
             Debug.Log("Interfaz fragmento");
             panel.ShowImage();
-
+            interaction.ExitInteraction();
         }
     }
 

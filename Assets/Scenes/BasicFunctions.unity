@@ -840,10 +840,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 99385769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5345bc124e1e3414ebfe45fcefcf17a7, type: 3}
+  m_Script: {fileID: 11500000, guid: a03a6f30cab42b94a805d6b43845f1fd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit.Samples.WorldSpaceUI::UnityEngine.XR.Interaction.Toolkit.Samples.WorldSpaceUI.ButtonEventSample
-  m_OnButtonClicked:
+  m_EditorClassIdentifier: Assembly-CSharp::OnButtonPress
+  action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a37402a6-bdbd-4f05-9c3d-13170741c668
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ad45df54-c2ee-44bb-919d-bbf21ba8503c
+      m_Path: <XRController>{RightHand}/secondaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1763041932}
+        m_TargetAssemblyTypeName: OnEnterLibraryArea, Assembly-CSharp
+        m_MethodName: ExitInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &117977338
@@ -989,6 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
   panel: {fileID: 786161584}
+  interaction: {fileID: 1763041932}
   word: ROMA
 --- !u!1001 &223558983
 PrefabInstance:
@@ -9012,7 +9045,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967548937}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.318}
+  m_LocalPosition: {x: 0, y: 0, z: 1.59}
   m_LocalScale: {x: 0.016293, y: 0.016293, z: 0.016293}
   m_ConstrainProportionsScale: 0
   m_Children:

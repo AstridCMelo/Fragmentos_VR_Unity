@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class OnEnterLibraryArea : MonoBehaviour
 {
+    private bool interactingMinigame = false; 
+
     //public GameObject xrOrigin;
     public GameObject continuousTurn;
     //public GameObject teleport;
@@ -12,12 +14,12 @@ public class OnEnterLibraryArea : MonoBehaviour
     public GameObject snapTurn;
     public GameObject leftController;
     public Transform xrOrigin;
-    private float xrOriginAngle;
-    private float xrOriginAngleInicial;
+    //private float xrOriginAngle;
+    //private float xrOriginAngleInicial;
 
     private void Start()
     {
-        xrOriginAngleInicial = 0;
+        //xrOriginAngleInicial = 0;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -25,34 +27,43 @@ public class OnEnterLibraryArea : MonoBehaviour
         {
             Debug.Log("Colision");
 
-            //Bloquear movimiento mientras interactua
-            continuousTurn.SetActive(false);
-            snapTurn.SetActive(true);
-            continuousMove.SetActive(false);
-            leftController.SetActive(false);
-            xrOriginAngleInicial = xrOrigin.rotation.eulerAngles.y;
-            
+            if(interactingMinigame == false)
+            {
+                EnterInteraction();
+            }
         }
-
+    }
+    public void Update()
+    {
+        //xrOriginAngle = xrOrigin.rotation.eulerAngles.y;
+        //ExitInteraction();
+    }
+    public void EnterInteraction()
+    {
+        //Bloquear movimiento mientras interactua
+        continuousTurn.SetActive(false);
+        //snapTurn.SetActive(true);
+        continuousMove.SetActive(false);
+        leftController.SetActive(false);
+        //xrOriginAngleInicial = xrOrigin.rotation.eulerAngles.y;
+    }
+    public void ExitInteraction()
+    {
+        continuousTurn.SetActive(true);
+        snapTurn.SetActive(false);
+        continuousMove.SetActive(true);
+        leftController.SetActive(true);
+        Debug.Log("Salio de restricciones");
     }
 
-    private void Update()
+    public void OnTriggerExit(Collider other)
     {
-        xrOriginAngle = xrOrigin.rotation.eulerAngles.y;
-        ExitInteraction();
-    }
-
-    private void ExitInteraction()
-    {
-        if(xrOriginAngle == (xrOriginAngleInicial * -1))
+        if (other.CompareTag("Player"))
         {
-            continuousTurn.SetActive(true);
-            snapTurn.SetActive(false);
-            continuousMove.SetActive(true);
-            leftController.SetActive(true);
-            Debug.Log("Entro");
-
+            interactingMinigame = false;
+            Debug.Log("Salio completamente");
         }
+
     }
 
 }
