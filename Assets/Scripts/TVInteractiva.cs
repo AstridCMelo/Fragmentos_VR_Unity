@@ -40,8 +40,6 @@ public class TVInteractiva : MonoBehaviour
 
             uiRecolectar.SetActive(true);
 
-            // Dar fragmento
-            GameManager.instancia.AgregarFragmento();
         }
     }
 }
