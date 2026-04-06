@@ -49,47 +49,50 @@ public class BookShelf : MonoBehaviour
     }
     public void Update()
     {
-        int i = 0;
-        int trueOcupedPosition = 0;
-        foreach (XRSocketInteractor socket in socketInteractorList)
+        if(interaction.interactingMinigame == true && interaction.minigameCompleted == false)
         {
-            positionsBooks[i] = socket.hasSelection;
-            i++;
-        }
-
-        i = 0;
-        foreach (bool positionOcuped in positionsBooks)
-        {
-            if (positionOcuped == false && i != (positionsBooks.Count - 1))
+            int i = 0;
+            int trueOcupedPosition = 0;
+            foreach (XRSocketInteractor socket in socketInteractorList)
             {
-                Debug.Log(dropbook);
-                if (dropbook == true)
-                {
-
-                }
-                else
-                {
-                    //pastposition = i;
-                    MoveBooks(i);
-                    changeState = true;
-                    break;
-                }
+                positionsBooks[i] = socket.hasSelection;
+                i++;
             }
-            else if (positionOcuped == true)
-            {
-                trueOcupedPosition++;
-            }
-            i++;
-        }
 
-        if (changeState == true)
-        {
-            if (trueOcupedPosition == positionsBooks.Count)
+            i = 0;
+            foreach (bool positionOcuped in positionsBooks)
             {
-                GetPastPosition();
-                GetCurrentWord();
-                VerifyOrganizedWord();
-                changeState = false;
+                if (positionOcuped == false && i != (positionsBooks.Count - 1))
+                {
+                    Debug.Log(dropbook);
+                    if (dropbook == true)
+                    {
+
+                    }
+                    else
+                    {
+                        //pastposition = i;
+                        MoveBooks(i);
+                        changeState = true;
+                        break;
+                    }
+                }
+                else if (positionOcuped == true)
+                {
+                    trueOcupedPosition++;
+                }
+                i++;
+            }
+
+            if (changeState == true)
+            {
+                if (trueOcupedPosition == positionsBooks.Count)
+                {
+                    GetPastPosition();
+                    GetCurrentWord();
+                    VerifyOrganizedWord();
+                    changeState = false;
+                }
             }
         }
     }
@@ -157,6 +160,7 @@ public class BookShelf : MonoBehaviour
         {
             Debug.Log("Interfaz fragmento");
             panel.ShowImage();
+            interaction.minigameCompleted = true;
             interaction.ExitInteraction();
         }
     }
@@ -210,4 +214,6 @@ public class BookShelf : MonoBehaviour
         }
         dropbook = false;
     }
+
+
 }

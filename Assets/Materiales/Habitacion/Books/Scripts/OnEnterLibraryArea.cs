@@ -5,7 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class OnEnterLibraryArea : MonoBehaviour
 {
-    private bool interactingMinigame = false; 
+    public bool interactingMinigame = false;
+    public bool minigameCompleted = false;
+    public TeleportPlayer anchorEndMinigame;
 
     //public GameObject xrOrigin;
     public GameObject continuousTurn;
@@ -27,7 +29,7 @@ public class OnEnterLibraryArea : MonoBehaviour
         {
             Debug.Log("Colision");
 
-            if(interactingMinigame == false)
+            if(interactingMinigame == false && minigameCompleted == false)
             {
                 EnterInteraction();
             }
@@ -45,6 +47,7 @@ public class OnEnterLibraryArea : MonoBehaviour
         //snapTurn.SetActive(true);
         continuousMove.SetActive(false);
         leftController.SetActive(false);
+        interactingMinigame = true;
         //xrOriginAngleInicial = xrOrigin.rotation.eulerAngles.y;
     }
     public void ExitInteraction()
@@ -53,7 +56,10 @@ public class OnEnterLibraryArea : MonoBehaviour
         //snapTurn.SetActive(false);
         continuousMove.SetActive(true);
         leftController.SetActive(true);
+        interactingMinigame = false;
         Debug.Log("Salio de restricciones");
+        anchorEndMinigame.Teleport();
+        
     }
 
     public void OnTriggerExit(Collider other)
