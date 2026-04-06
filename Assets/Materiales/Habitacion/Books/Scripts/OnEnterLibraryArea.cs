@@ -11,7 +11,7 @@ public class OnEnterLibraryArea : MonoBehaviour
     public GameObject continuousTurn;
     //public GameObject teleport;
     public GameObject continuousMove;
-    public GameObject snapTurn;
+    //public GameObject snapTurn;
     public GameObject leftController;
     public Transform xrOrigin;
     //private float xrOriginAngle;
@@ -50,7 +50,7 @@ public class OnEnterLibraryArea : MonoBehaviour
     public void ExitInteraction()
     {
         continuousTurn.SetActive(true);
-        snapTurn.SetActive(false);
+        //snapTurn.SetActive(false);
         continuousMove.SetActive(true);
         leftController.SetActive(true);
         Debug.Log("Salio de restricciones");
