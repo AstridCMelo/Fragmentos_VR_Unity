@@ -9,11 +9,19 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Escenarip
   - Water
   - UI
   - 
   - 
+=======
+  - 
+  - Water
+  - UI
+  - InteractableBook
+  - Player
+>>>>>>> origin/feature/Mini-juego_Libros
   - 
   - 
   - 
