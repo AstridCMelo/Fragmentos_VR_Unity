@@ -1,0 +1,11 @@
+Name: INI_Studio_Table_and_Chair_0017
+Version: 2015
+Preview: Yes
+Units: Millimeters
+Dimension: 1616.3 x 1705.14 x 957.92
+Polys: 219 856
+XForm: Yes
+Box Trick: Yes
+Model Parts: 28
+Render: Default Scanline
+Formats: 3Ds Max 2015, OBJ, FBX
