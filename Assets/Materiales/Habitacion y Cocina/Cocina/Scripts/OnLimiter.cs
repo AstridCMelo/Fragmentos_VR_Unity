@@ -16,28 +16,35 @@ public class OnLimiter : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //El numero seleccionado se calcula a partir de las colisiones con el trigger del limitador
-        selectedNumber+=2;
-        Debug.Log(selectedNumber + "numero paso por trigger");
-
-        if (other.CompareTag("NumberPhoneSelected"))
+        if(NearInteractingNumbers.numberSelected)
         {
-            //registerNumber = true;
-            coli.isTrigger = false;
-            OnReleased();
-            
-            XRGrabInteractable GrabNumber = other.GetComponent<XRGrabInteractable>();
-            if(GrabNumber != null && GrabNumber.isSelected)
-            {
-                IXRSelectInteractor interactor = GrabNumber.firstInteractorSelecting;
-                GrabNumber.interactionManager.SelectExit(interactor, GrabNumber);
-            }
+            //El numero seleccionado se calcula a partir de las colisiones con el trigger del limitador
+            selectedNumber++;
+            Debug.Log(selectedNumber + "numero paso por trigger");
 
+            if (other.CompareTag("NumberPhoneSelected"))
+            {
+                //registerNumber = true;
+                coli.isTrigger = false;
+                OnReleased();
+
+                XRGrabInteractable GrabNumber = other.GetComponent<XRGrabInteractable>();
+                if (GrabNumber != null && GrabNumber.isSelected)
+                {
+                    IXRSelectInteractor interactor = GrabNumber.firstInteractorSelecting;
+                    GrabNumber.interactionManager.SelectExit(interactor, GrabNumber);
+                }
+            }
+        }
+        else
+        {
+            selectedNumber = 0;
         }
     }
     public void OnReleased()
     {
         //Se actualiza la interfaz
+
         PhoneRotate.grabNumber = false;
         //countRegisterNumbers++;
         if(selectedNumber == 10)
@@ -50,6 +57,7 @@ public class OnLimiter : MonoBehaviour
             dial.RegisterNumber(selectedNumber);
 
         selectedNumber = 0;
+        coli.isTrigger = true;
     }
 
     // Update is called once per frame

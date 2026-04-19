@@ -7,6 +7,7 @@ using UnityEngine;
 public class MiniGamePhone : MonoBehaviour, IRegisterNumber
 {
     public UIController textoController;
+    public UIController ImageFragmento;
     public TMP_Text tmpText1;
     public TMP_Text tmpText2;
     public TMP_Text tmpText3;
@@ -69,6 +70,6 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
     public void UnlockFragment()
     {
         Debug.Log("Interfaz fragmento");
-        textoController.ShowImage();
+        ImageFragmento.ShowImage();
     }
 }
