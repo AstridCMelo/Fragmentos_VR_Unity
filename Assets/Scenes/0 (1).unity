@@ -1508,7 +1508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.134
+      value: 1.424
       objectReference: {fileID: 0}
     - target: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5304,10 +5304,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988351649}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988351649}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -9429,7 +9453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.132
+      value: 1.422
       objectReference: {fileID: 0}
     - target: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15192,43 +15216,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.073
+      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.738
+      value: -0.522
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.072
+      value: 9.688
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49999905
+      value: -0.58778095
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0016753022
+      value: 0.0002021993
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.86602384
+      value: -0.8090179
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00096723565
+      value: 0.0019238759
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.165
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -120
+      value: -252
       objectReference: {fileID: 0}
     - target: {fileID: 1211977260535002842, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.222
+      value: -0.148
       objectReference: {fileID: 0}
     - target: {fileID: 1988935485136464992, guid: e45ff93859c9457489dd855b973168d9, type: 3}
       propertyPath: m_Name
@@ -16729,7 +16753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2919999
+      value: 1.582
       objectReference: {fileID: 0}
     - target: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_LocalPosition.z
