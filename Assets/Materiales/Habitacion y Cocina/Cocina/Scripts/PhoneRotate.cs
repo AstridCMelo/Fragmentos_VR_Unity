@@ -9,9 +9,10 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class PhoneRotate : MonoBehaviour
 {
     [SerializeField] private Transform linkedDial;
-    [SerializeField] private float returnVelocity = 100f;
+    [SerializeField] private float returnVelocity = 150f;
+    private AudioPhoneManager audioManager;
 
-    //Se coloca true si se agarra un número
+    //Se coloca true si se agarra un n?mero
     public static bool grabNumber = false;
     //public static bool returnPosition = false;
 
@@ -59,6 +60,7 @@ public class PhoneRotate : MonoBehaviour
 
     private void GrabbedBy(SelectEnterEventArgs args)
     {
+        audioManager = GetComponent<AudioPhoneManager>();
         interactor = GetComponent<XRGrabInteractable>().firstInteractorSelecting;
         // PhoneRotate.returnPosition = false;
         grabNumber = true;
@@ -80,9 +82,15 @@ public class PhoneRotate : MonoBehaviour
 
     void Update()
     {
-        if(returnPosition)
+        if (returnPosition)
         {
+            if (audioManager.reproduced == false)
+            {
+                audioManager.PlaySound = true;
+                audioManager.reproduced = true;
+            }
             ReturnAntiClockwise();
+
         }
         else if (grabNumber)
         {
@@ -112,7 +120,7 @@ public class PhoneRotate : MonoBehaviour
 
         linkedDial.localEulerAngles = new Vector3(linkedDial.localEulerAngles.x, linkedDial.localEulerAngles.y, currentAngleDial);
 
-       // Debug.Log("Rotating");
+        // Debug.Log("Rotating");
 
         lastAngleControl = angleControl; //Del controlador
     }
@@ -125,11 +133,12 @@ public class PhoneRotate : MonoBehaviour
                                                   0f,
                                                   currentAngleDial);
 
-        if(currentAngleDial >= initialAngleDial)
+        if (currentAngleDial >= initialAngleDial)
         {
             currentAngleDial = initialAngleDial;
             returnPosition = false;
             grabNumber = false;
+            audioManager.reproduced = true;
         }
     }
 }

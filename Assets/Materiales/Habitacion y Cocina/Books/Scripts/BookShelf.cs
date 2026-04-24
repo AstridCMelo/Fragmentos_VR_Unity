@@ -81,6 +81,12 @@ public class BookShelf : MonoBehaviour
                 {
                     trueOcupedPosition++;
                 }
+                else if (positionOcuped == false && i == (positionsBooks.Count - 1))
+                {
+                    changeState = true;
+                    break;
+                }
+
                 i++;
             }
 

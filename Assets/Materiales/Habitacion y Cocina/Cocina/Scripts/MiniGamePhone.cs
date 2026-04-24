@@ -64,6 +64,10 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
                 textoController.ChangeText(item, -1);
                 countRegisterNumbers--;
             }
+
+            countRegisterNumbers = 0;
+            numbers.Clear();
+
         }
     }
 

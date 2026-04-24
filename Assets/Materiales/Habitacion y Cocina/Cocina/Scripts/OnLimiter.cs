@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -7,6 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class OnLimiter : MonoBehaviour
 {
     private int selectedNumber = 0;
+    [SerializeField] private GameObject dialPhone;
 
     Collider coli;
 
@@ -28,11 +30,13 @@ public class OnLimiter : MonoBehaviour
                 coli.isTrigger = false;
                 OnReleased();
 
-                XRGrabInteractable GrabNumber = other.GetComponent<XRGrabInteractable>();
-                if (GrabNumber != null && GrabNumber.isSelected)
+                XRGrabInteractable GrabNumber = other.GetComponentInParent<XRGrabInteractable>(); ;
+                if (GrabNumber != null && GrabNumber.isSelected && GrabNumber.firstInteractorSelecting != null)
                 {
-                    IXRSelectInteractor interactor = GrabNumber.firstInteractorSelecting;
-                    GrabNumber.interactionManager.SelectExit(interactor, GrabNumber);
+                    StartCoroutine(ReleaseAfterDelay(GrabNumber, 1f));
+                    //IXRSelectInteractor interactor = GrabNumber.firstInteractorSelecting;
+                    //GrabNumber.interactionManager.SelectExit(interactor, GrabNumber);
+                    //Debug.Log("SoltoEntro");
                 }
             }
         }
@@ -41,6 +45,19 @@ public class OnLimiter : MonoBehaviour
             selectedNumber = 0;
         }
     }
+
+    IEnumerator ReleaseAfterDelay(XRGrabInteractable GrabNumber, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (GrabNumber != null && GrabNumber.isSelected && GrabNumber.firstInteractorSelecting != null)
+        {
+            IXRSelectInteractor interactor = GrabNumber.firstInteractorSelecting;
+            GrabNumber.interactionManager.SelectExit(interactor, GrabNumber);
+            Debug.Log("Soltó después de segundo");
+        }
+    }
+
     public void OnReleased()
     {
         //Se actualiza la interfaz
@@ -55,6 +72,11 @@ public class OnLimiter : MonoBehaviour
         Debug.Log("Registrar Numero " + selectedNumber);
         if (TryGetComponent<IRegisterNumber>(out IRegisterNumber dial))
             dial.RegisterNumber(selectedNumber);
+
+        if (dialPhone.TryGetComponent<IRegisterNumber>(out var phoneDial))
+        {
+            phoneDial.RegisterNumber(selectedNumber);
+        }
 
         selectedNumber = 0;
         coli.isTrigger = true;
