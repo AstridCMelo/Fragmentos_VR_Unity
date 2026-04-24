@@ -1,0 +1,11 @@
+Chester-Sofa
+Brand: Chester
+sofa -chester -pillow -cushion
+Number of polygons: 70 583
+Number of vertexts: 71 632
+Size: 11.9 MB
+H=68  cm 
+D=100  cm 
+W=180  cm 
+software:  3d max 2016. v-ray 3.60.03. corona 2
+The archive consist of:  max 2013. corona. fbx vray. fbx corona. obj. tecture. render.  
