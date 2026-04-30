@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b9194ec3c0074d0429a259dd1c80593a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sliderProgreso: {fileID: 1124681772080422150, guid: cd3dd0cfab2fd204ca6976610c9665c2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
