@@ -5,12 +5,17 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
 {
     private AudioTVManager audioManager;
     [SerializeField] float RightChannel = 270; //Grados que debe avanzar
-    public UIController panel;
-   // [SerializeField] 
+    public UIController pantalla;
+
+    [SerializeField] private TVChannel[] canales;
+    private int canalIndex;
+    private float LastDialValue;
 
     void Start()
     {
         audioManager = GetComponent<AudioTVManager>();
+
+        canalIndex = 0;
     }
 
     public void ChannelChanged(float dialvalue)
@@ -19,15 +24,45 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
 
         Debug.Log("Channel " + dialvalue);
 
-        if(dialvalue == RightChannel)
+        //Verificar si es un canal que muestra imagen 
+        UpdateChannel(canalIndex);
+
+        if (dialvalue < 0)
+        {
+            ForwardChannel();
+        }
+        else if (dialvalue > 0)
+        {
+            BackChannel();
+        }
+
+        if (dialvalue == RightChannel)
         {
             UnlockFragment();
         }
+
+        LastDialValue = dialvalue;
+
     }
 
     public void UnlockFragment()
     {
         Debug.Log("Interfaz Pista Limpia");
-        panel.ShowImage();
+        pantalla.ShowImage();
+    }
+
+    public void UpdateChannel(int index)
+    {
+        pantalla.panel = canales[index].panel;
+    }
+
+    public void ForwardChannel()
+    {
+        canalIndex++;
+    }
+
+    public void BackChannel()
+    {
+        canalIndex--;
     }
 }
