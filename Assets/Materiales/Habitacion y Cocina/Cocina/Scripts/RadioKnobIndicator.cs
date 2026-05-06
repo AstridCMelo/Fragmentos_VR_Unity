@@ -28,6 +28,8 @@ public class RadioKnobIndicator : MonoBehaviour
 
     private float stepIndicator = 0.05f;
 
+    private bool movementsense = true;
+
     private XRGrabInteractable grabInteractor => GetComponent<XRGrabInteractable>();
 
     private void OnEnable()
@@ -97,14 +99,18 @@ public class RadioKnobIndicator : MonoBehaviour
                                                 indicatorRadio.transform.localPosition.y,
                                                 indicatorLimits);
 
-        //if (TryGetComponent<IChangeChannel>(out IChangeChannel dial))
-        //  dial.ChannelChanged(linkedDial.localEulerAngles.z);
-        
+        movementsense = true;
+
+        if (TryGetComponent<IChangeTrack>(out IChangeTrack changeTrack))
+        {
+            changeTrack.MovementSense(movementsense);
+        }
+
     }
 
     private void IndicatorLimits()
     {
-        Debug.Log(indicatorLimits);
+        //Debug.Log(indicatorLimits);
         if (indicatorLimits >= minIndicator && indicatorLimits <= maxIndicator)
         {
             Debug.Log("Moviendo Indicador");
@@ -131,8 +137,14 @@ public class RadioKnobIndicator : MonoBehaviour
                                                 indicatorRadio.transform.localPosition.y,
                                                 indicatorLimits);
 
-        //if (TryGetComponent<IChangeChannel>(out IChangeChannel dial))
-        //  dial.ChannelChanged(linkedDial.localEulerAngles.z);
+        movementsense = false;
+
+
+        if (TryGetComponent<IChangeTrack>(out IChangeTrack changeTrack))
+        {
+            changeTrack.MovementSense(movementsense);
+        }
+
     }
 
     private void RotateDialAntiClockwise()
