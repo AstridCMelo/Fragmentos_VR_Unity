@@ -25,16 +25,16 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
         Debug.Log("Channel " + dialvalue);
 
         //Verificar si es un canal que muestra imagen 
-        UpdateChannel(canalIndex);
+       // UpdateChannel(canalIndex);
 
-        if (dialvalue < 0)
-        {
-            ForwardChannel();
-        }
-        else if (dialvalue > 0)
-        {
-            BackChannel();
-        }
+        //if (dialvalue < 0)
+        //{
+        //    ForwardChannel();
+        //}
+        //else if (dialvalue > 0)
+        //{
+        //    BackChannel();
+        //}
 
         if (dialvalue == RightChannel)
         {

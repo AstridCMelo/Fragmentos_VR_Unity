@@ -9,6 +9,8 @@ public class RadioController : MonoBehaviour, IChangeTrack
     [SerializeField] private AudioClip noiseTrack;
     [SerializeField] private RadioTrack[] audioTracks;
 
+    private bool radioOn = false;
+
     [SerializeField] private AudioSource noiseAudioSource;
     [SerializeField] private AudioSource radioAudioSource;
 
@@ -16,7 +18,7 @@ public class RadioController : MonoBehaviour, IChangeTrack
     private float indicatorPos;
 
     private float tolerace_track_max;
-    [SerializeField] private float tolerace_indicator = 0.01f;
+    [SerializeField] private float tolerace_indicator;
     private bool movementSense = true;
 
     private float lastCenter = 0f;
@@ -25,13 +27,7 @@ public class RadioController : MonoBehaviour, IChangeTrack
     {
         trackIndex = -1;
         radioAudioSource.clip = noiseTrack;
-
-        noiseAudioSource.pitch = UnityEngine.Random.Range(.97f, 1.03f);
         noiseAudioSource.clip = noiseTrack;
-
-        PlayAudio(noiseAudioSource);
-        PlayAudio(radioAudioSource);
-
     }
     public void UpdateTrack(int index)
     {
@@ -94,12 +90,13 @@ public class RadioController : MonoBehaviour, IChangeTrack
 
     public void PlayAudio(AudioSource audioSource)
     {
+        audioSource.time = UnityEngine.Random.Range(0f, audioSource.clip.length);
         audioSource.Play();
     }
 
     public void StopAudio(AudioSource audioSource)
     {
-        radioAudioSource.Stop();
+        audioSource.Stop();
     }
 
     public void ForwardTrack()
@@ -119,5 +116,25 @@ public class RadioController : MonoBehaviour, IChangeTrack
             UpdateTrack(trackIndex);
         }
     }
+
+    public void TurnOnoffRadio()
+    {
+        radioOn = !radioOn;
+
+        if(radioOn)
+        {
+            noiseAudioSource.pitch = UnityEngine.Random.Range(.97f, 1.03f);
+
+            PlayAudio(noiseAudioSource);
+            PlayAudio(radioAudioSource);
+        }
+        else
+        {
+            StopAudio(noiseAudioSource);
+            StopAudio(radioAudioSource);
+        }
+           
+    }
+
 
 }
