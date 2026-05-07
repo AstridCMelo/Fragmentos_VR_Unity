@@ -26,7 +26,7 @@ public class RadioKnobIndicator : MonoBehaviour
 
     private float indicatorLimits = 0f;
 
-    private float stepIndicator = 0.05f;
+    [SerializeField] private float stepIndicator = 0.05f;
 
     private bool movementsense = true;
 
@@ -103,7 +103,7 @@ public class RadioKnobIndicator : MonoBehaviour
 
         if (TryGetComponent<IChangeTrack>(out IChangeTrack changeTrack))
         {
-            changeTrack.MovementSense(movementsense);
+            changeTrack.MovementSense(movementsense, indicatorLimits);
         }
 
     }
@@ -142,7 +142,7 @@ public class RadioKnobIndicator : MonoBehaviour
 
         if (TryGetComponent<IChangeTrack>(out IChangeTrack changeTrack))
         {
-            changeTrack.MovementSense(movementsense);
+            changeTrack.MovementSense(movementsense, indicatorLimits);
         }
 
     }

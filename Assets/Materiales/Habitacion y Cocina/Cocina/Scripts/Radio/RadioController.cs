@@ -13,6 +13,7 @@ public class RadioController : MonoBehaviour, IChangeTrack
     [SerializeField] private AudioSource radioAudioSource;
 
     private int trackIndex;
+    private float indicatorPos;
 
     private float tolerace_track_max;
     [SerializeField] private float tolerace_indicator = 0.01f;
@@ -38,14 +39,16 @@ public class RadioController : MonoBehaviour, IChangeTrack
         PlayAudio(radioAudioSource);
     }
 
-    public void IndicatorTrack(float indicatorPosition, float center, float halfWidth)
+    public void IndicatorTrack(float center, float halfWidth)
     {
         ForwardBackMovement(center);
 
         tolerace_track_max = halfWidth;
 
-        float distance = Mathf.Abs(tolerace_indicator - indicatorPosition);
-        float deltaVolume = Mathf.InverseLerp(tolerace_indicator, tolerace_track_max, distance);
+        float distance = Mathf.Abs(center - indicatorPos);
+        float deltaVolume = Mathf.InverseLerp(0, tolerace_track_max, distance);
+
+        Debug.Log("distance" + distance);
 
         radioAudioSource.volume = 1f - deltaVolume;
 
@@ -63,9 +66,10 @@ public class RadioController : MonoBehaviour, IChangeTrack
         radioAudioSource.volume = 0f;
     }
 
-    public void MovementSense(bool forward)
+    public void MovementSense(bool forward, float indicatorPosition)
     {
         movementSense = forward;
+        indicatorPos = indicatorPosition;
     }
 
     public void ForwardBackMovement(float center)
@@ -83,7 +87,7 @@ public class RadioController : MonoBehaviour, IChangeTrack
         }
         else
         {
-            Debug.Log("Rechaza");
+
         }
     }
     

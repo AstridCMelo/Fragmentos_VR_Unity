@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
+  m_Name: NPCPapaDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  npcName: "Pap\xE1"
+  playerName: Hijo
+  npcPortrait: {fileID: 0}
+  playerPortrait: {fileID: 0}
+  dialogueLinesNPC:
+  - Hi
+  - My Friend
+  - Hi, nice to meet you
+  - nice to mee you too
+  - bye, new friend
+  dialogueblockNPC:
+  - dialogueLinesNPC:
+    - "Hola\u2026 \xBFotra vez dejando todo tirado? "
+    - "Pap\xE1\u2026 \xBFqu\xE9 hago aqu\xED? "
+    - " Eso mismo me pregunto yo\u2026 siempre vuelves cuando pierdes algo. "
+    - Yo no he perdido nada.
+    - " \xBFSeguro? Mira alrededor\u2026 esta casa guarda m\xE1s de lo que crees. "
+    NPCorPlayerDialogLine: 0100010001
+    dialogueBlockState: 0
+  - dialogueLinesNPC:
+    - "\xBFT\xFA viste algo\u2026 m\xEDo? "
+    - "Encontr\xE9 algo, s\xED\u2026 pero no supe d\xF3nde ponerlo. "
+    - " \xBFY d\xF3nde est\xE1? "
+    - "Hay cosas que solo aparecen cuando sabes qu\xE9 est\xE1s buscando. "
+    NPCorPlayerDialogLine: 00010001
+    dialogueBlockState: 1
+  - dialogueLinesNPC:
+    - "No entiendo qu\xE9 estoy buscando."
+    - 'Busca algo que no encaja. '
+    NPCorPlayerDialogLine: 0001
+    dialogueBlockState: 1
+  - dialogueLinesNPC:
+    - "\u2026ah\xED est\xE1. "
+    - " \xBFT\xFA sab\xEDas? "
+    - "Solo lo estaba cuidando\u2026 hasta que volvieras. "
+    NPCorPlayerDialogLine: 010001
+    dialogueBlockState: 2
+  autoProgressLines: 0101010101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.5
+  voiceeSound: {fileID: 8300000, guid: a40fc3f8fe3325f43956caaf7f59c026, type: 3}
+  voicePitch: 0.97

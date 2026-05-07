@@ -4,19 +4,29 @@ using UnityEngine;
 public class StationTrigger : MonoBehaviour
 {
     private float center;
+    private float halfWidth;
     [SerializeField] GameObject knobController;
+
 
     private void OnTriggerEnter(Collider other)
     {
         BoxCollider col = GetComponent<BoxCollider>();
-        float center = col.center.z;
-        float halfWidth = col.size.z / 2f;
+        center = transform.localPosition.z;
+        halfWidth = 0.3f;
 
-        Debug.Log("Trigger ok");
+        Debug.Log(halfWidth);
 
         if (knobController.TryGetComponent<IChangeTrack>(out IChangeTrack changeTrack))
         {
-            changeTrack.IndicatorTrack(other.transform.localPosition.z, center, halfWidth);
+            changeTrack.IndicatorTrack(center, halfWidth);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (knobController.TryGetComponent<IChangeTrack>(out IChangeTrack changeTrack))
+        {
+            changeTrack.IndicatorTrack(center, halfWidth);
         }
     }
 
