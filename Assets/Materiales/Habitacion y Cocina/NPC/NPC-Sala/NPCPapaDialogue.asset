@@ -14,14 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
   npcName: "Pap\xE1"
   playerName: Hijo
-  npcPortrait: {fileID: 0}
+  npcPortrait: {fileID: 21300000, guid: d4103e528fd70db46995f53f6400c378, type: 3}
   playerPortrait: {fileID: 0}
-  dialogueLinesNPC:
-  - Hi
-  - My Friend
-  - Hi, nice to meet you
-  - nice to mee you too
-  - bye, new friend
   dialogueblockNPC:
   - dialogueLinesNPC:
     - "Hola\u2026 \xBFotra vez dejando todo tirado? "
@@ -51,6 +45,6 @@ MonoBehaviour:
     dialogueBlockState: 2
   autoProgressLines: 0101010101
   autoProgressDelay: 1.5
-  typingSpeed: 0.5
-  voiceeSound: {fileID: 8300000, guid: a40fc3f8fe3325f43956caaf7f59c026, type: 3}
+  typingSpeed: 0.25
+  voiceeSound: {fileID: 8300000, guid: 202992a9c5c6ef74b93e174f6a3957e7, type: 3}
   voicePitch: 0.97

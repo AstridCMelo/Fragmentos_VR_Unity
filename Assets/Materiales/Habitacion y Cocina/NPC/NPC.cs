@@ -41,6 +41,16 @@ public class NPC : MonoBehaviour, IInteractableNPC
         }
     }
 
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            //Canvas InteractuaVer
+            interactionPanel.SetActive(true);
+            validInteraction = true;
+        }
+    }
+
     public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -173,7 +183,6 @@ public class NPC : MonoBehaviour, IInteractableNPC
         }
         else if (minigameCompleted)
         {
-            
             activedialogueLinesNPC = dialogueData.dialogueblockNPC[lastIndex].dialogueLinesNPC;
             activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[lastIndex].NPCorPlayerDialogLine;
         }
@@ -192,7 +201,7 @@ public class NPC : MonoBehaviour, IInteractableNPC
         }
     }
 
-
+    
 }
 
 //Evitar que se pueda mover hasta que acabe de interactuar con el NPC

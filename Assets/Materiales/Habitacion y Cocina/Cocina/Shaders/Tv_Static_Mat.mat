@@ -38,10 +38,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Distortion_Smoothness: 1
+    - _Distortion_Speed: 2
     - _Noise_Intensity: 0.07
     - _Noise_Scale: 350
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Scanning_Lines: 1
+    - _Scanning_Lines_Amount: 0.093
+    - _Scanning_Lines_Count: 0.091
+    - _Scanning_Lines_Speed: 2
     - _XRMotionVectorsPass: 1
     m_Colors: []
   m_BuildTextureStacks: []

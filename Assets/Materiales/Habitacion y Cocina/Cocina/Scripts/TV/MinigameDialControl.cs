@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.OpenXR.NativeTypes;
+using static MinigameDialControl;
 
 public class MinigameDialControl : MonoBehaviour, IChangeChannel
 {
@@ -7,42 +9,50 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
     [SerializeField] float RightChannel = 270; //Grados que debe avanzar
     public UIController pantalla;
 
-    [SerializeField] private TVChannel[] canales;
+    [SerializeField] private ChannelPanel[] canales;
     private int canalIndex;
     private float LastDialValue;
+
+    [SerializeField] private Material matNoise;
 
     void Start()
     {
         audioManager = GetComponent<AudioTVManager>();
-
         canalIndex = 0;
     }
 
     public void ChannelChanged(float dialvalue)
     {
+        pantalla.HideImage();
+
         audioManager.PlaySound = true;
 
-        Debug.Log("Channel " + dialvalue);
+        //Debug.Log("Channel " + dialvalue);
 
         //Verificar si es un canal que muestra imagen 
-       // UpdateChannel(canalIndex);
 
-        //if (dialvalue < 0)
-        //{
-        //    ForwardChannel();
-        //}
-        //else if (dialvalue > 0)
-        //{
-        //    BackChannel();
-        //}
+        bool angleWithChannel = false;
 
-        if (dialvalue == RightChannel)
+        foreach (ChannelPanel canal in canales)
         {
-            UnlockFragment();
+            if (Mathf.Abs(dialvalue - canal.idCanal) < 0.3f)
+            {
+                UpdateChannel(canal);
+                angleWithChannel = true;
+                break;
+            }
         }
 
-        LastDialValue = dialvalue;
+        if (angleWithChannel == false)
+        {
+            Debug.Log("Random");
+            UpdaterandomNoise();
+        }
 
+        //if (dialvalue == RightChannel)
+        //{
+        //    UnlockFragment();
+        //}
     }
 
     public void UnlockFragment()
@@ -51,18 +61,30 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
         pantalla.ShowImage();
     }
 
-    public void UpdateChannel(int index)
+    public void UpdaterandomNoise()
     {
-        pantalla.panel = canales[index].panel;
+        Debug.Log("Random");
+        matNoise.SetFloat("_Noise Scale", Random.Range(350f, 500f));
+        matNoise.SetFloat("_Noise Intensity", Random.Range(0.05f, 0.1f));
+        matNoise.SetFloat("_Scanning Lines", Random.Range(1, 3));
+        matNoise.SetFloat("Scanning Lines Amount", Random.Range(0.0f, 1.0f));
+        matNoise.SetFloat("Scanning Lines Speed", Random.Range(0.5f, 1.5f));
+
     }
 
-    public void ForwardChannel()
+    public void UpdateChannel(ChannelPanel canal)
     {
-        canalIndex++;
+        Debug.Log("cambio imagen");
+        pantalla.panel = canal.panel;
+        pantalla.ShowImage();
     }
 
-    public void BackChannel()
+
+    [System.Serializable]
+    public class ChannelPanel
     {
-        canalIndex--;
+        public int idCanal;
+        public GameObject panel;
     }
+
 }

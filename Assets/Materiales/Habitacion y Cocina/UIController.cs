@@ -9,6 +9,11 @@ public class UIController : MonoBehaviour
         panel.SetActive(true);
     }
 
+    public void HideImage()
+    {
+        panel.SetActive(false);
+    }
+
     public void ChangeText(TMP_Text tmpText, int number)
     {
         if(number == -1)
