@@ -13,7 +13,15 @@ public class SoundEffectManager : MonoBehaviour
 
     public static void PlayNpc(AudioClip audioNpc, float pitch = 1f)
     {
+        npcAudioSource.Stop();
         npcAudioSource.pitch = pitch;
-        npcAudioSource.PlayOneShot(audioNpc);
+        // npcAudioSource.PlayOneShot(audioNpc);
+        npcAudioSource.clip = audioNpc;
+        npcAudioSource.Play();
+    }
+
+    public static void StopNpc()
+    {
+        npcAudioSource.Stop();
     }
 }

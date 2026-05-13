@@ -34,5 +34,6 @@ public class DialogueBlock
 {
     public string[] dialogueLinesNPC;
     public bool[] NPCorPlayerDialogLine;
+    public AudioClip[] dialogueVoicesNPC;
     public DialogueBlockState dialogueBlockState;
 }

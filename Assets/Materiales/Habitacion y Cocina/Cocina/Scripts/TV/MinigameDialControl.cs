@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.XR.OpenXR.NativeTypes;
 using static MinigameDialControl;
 
@@ -8,6 +9,7 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
     private AudioTVManager audioManager;
     [SerializeField] float RightChannel = 270; //Grados que debe avanzar
     public UIController pantalla;
+    public AudioSource noisePantalla;
 
     [SerializeField] private ChannelPanel[] canales;
     private int canalIndex;
@@ -19,6 +21,7 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
     {
         audioManager = GetComponent<AudioTVManager>();
         canalIndex = 0;
+        noisePantalla.Play();
     }
 
     public void ChannelChanged(float dialvalue)
@@ -37,15 +40,24 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
         {
             if (Mathf.Abs(dialvalue - canal.idCanal) < 0.3f)
             {
+                noisePantalla.Stop();
                 UpdateChannel(canal);
                 angleWithChannel = true;
                 break;
+                
             }
         }
 
         if (angleWithChannel == false)
         {
             Debug.Log("Random");
+
+            if (!noisePantalla.isPlaying)
+            {
+                noisePantalla.Play();
+            }
+
+            noisePantalla.pitch = Random.Range(.80f, 1.5f);
             UpdaterandomNoise();
         }
 
@@ -64,10 +76,10 @@ public class MinigameDialControl : MonoBehaviour, IChangeChannel
     public void UpdaterandomNoise()
     {
         Debug.Log("Random");
-        matNoise.SetFloat("_Noise Scale", Random.Range(350f, 500f));
+        matNoise.SetFloat("_Noise Scale", Random.Range(250f, 500f));
         matNoise.SetFloat("_Noise Intensity", Random.Range(0.05f, 0.1f));
-        matNoise.SetFloat("_Scanning Lines", Random.Range(1, 3));
-        matNoise.SetFloat("Scanning Lines Amount", Random.Range(0.0f, 1.0f));
+        matNoise.SetFloat("_Scanning Lines", Random.Range(1, 5));
+        matNoise.SetFloat("Scanning Lines Amount", Random.Range(0.5f, 1.0f));
         matNoise.SetFloat("Scanning Lines Speed", Random.Range(0.5f, 1.5f));
 
     }

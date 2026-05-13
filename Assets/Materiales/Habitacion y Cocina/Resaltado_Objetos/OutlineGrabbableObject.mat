@@ -63,12 +63,13 @@ Material:
     - _DstBlendAlpha: 10
     - _Fade_Distance: 75
     - _Intensity: 4
-    - _Outline_Thickness: 0.0072
+    - _Outline_Thickness: 0.0041
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _SrcBlendAlpha: 1
     - _Surface: 1
+    - _XRMotionVectorsPass: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0

@@ -31,7 +31,8 @@ public class OnEnterLibraryArea : MonoBehaviour
 
             if(interactingMinigame == false && minigameCompleted == false)
             {
-                EnterInteraction();
+                // EnterInteraction();
+                interactingMinigame = true;
             }
         }
     }

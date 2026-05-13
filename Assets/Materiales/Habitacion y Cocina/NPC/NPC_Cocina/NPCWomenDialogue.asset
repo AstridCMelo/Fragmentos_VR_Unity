@@ -10,46 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
-  m_Name: NPCPapaDialogue
+  m_Name: NPCWomenDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
-  npcName: "Pap\xE1"
+  npcName: "Mam\xE1"
   playerName: Hijo
-  npcPortrait: {fileID: 21300000, guid: d4103e528fd70db46995f53f6400c378, type: 3}
+  npcPortrait: {fileID: 21300000, guid: adaef6de483e8e44fae13a41f66d00db, type: 3}
   playerPortrait: {fileID: 0}
   dialogueblockNPC:
   - dialogueLinesNPC:
-    - "Hola\u2026 \xBFotra vez dejando todo tirado? "
-    - "Pap\xE1\u2026 \xBFqu\xE9 hago aqu\xED? "
-    - " Eso mismo me pregunto yo\u2026 siempre vuelves cuando pierdes algo. "
-    - Yo no he perdido nada.
-    - " \xBFSeguro? Mira alrededor\u2026 esta casa guarda m\xE1s de lo que crees. "
-    NPCorPlayerDialogLine: 0100010001
+    - "Llegaste\u2026 pens\xE9 que te ibas a tardar m\xE1s. "
+    - "Mam\xE1\u2026 \xBFqu\xE9 est\xE1 pasando? "
+    - Nada que no haya pasado antes.
+    NPCorPlayerDialogLine: 010001
     dialogueVoicesNPC:
     - {fileID: 8300000, guid: adf5647f7abea6e44bf87e75de323433, type: 3}
     - {fileID: 0}
     - {fileID: 8300000, guid: da2a55dcc244dc647bd11817b497db73, type: 3}
-    - {fileID: 0}
-    - {fileID: 8300000, guid: 2e3f137a3229c7643be50ba8f22b301c, type: 3}
     dialogueBlockState: 0
   - dialogueLinesNPC:
-    - "\xBFT\xFA viste algo\u2026 m\xEDo? "
-    - "Encontr\xE9 algo, s\xED\u2026 pero no supe d\xF3nde ponerlo. "
-    - " \xBFY d\xF3nde est\xE1? "
-    - "Hay cosas que solo aparecen cuando sabes qu\xE9 est\xE1s buscando. "
+    - 'No logro hacerlo funcionar. '
+    - "Porque lo est\xE1s forzando. "
+    - " Entonces, \xBFc\xF3mo? "
+    - "Como cuando busc\xE1bamos una emisora. "
     NPCorPlayerDialogLine: 00010001
     dialogueVoicesNPC: []
     dialogueBlockState: 1
   - dialogueLinesNPC:
-    - "No entiendo qu\xE9 estoy buscando."
-    - 'Busca algo que no encaja. '
+    - "Creo que estoy cerca\u2026 "
+    - "No pienses tanto\u2026 escucha. "
     NPCorPlayerDialogLine: 0001
     dialogueVoicesNPC: []
     dialogueBlockState: 1
   - dialogueLinesNPC:
-    - "\u2026ah\xED est\xE1. "
-    - " \xBFT\xFA sab\xEDas? "
-    - "Solo lo estaba cuidando\u2026 hasta que volvieras. "
-    NPCorPlayerDialogLine: 010001
+    - "\u2026ya. "
+    - "\xBFVes? Nunca se fue. "
+    NPCorPlayerDialogLine: 0001
     dialogueVoicesNPC: []
     dialogueBlockState: 2
   autoProgressLines: 0101010101
