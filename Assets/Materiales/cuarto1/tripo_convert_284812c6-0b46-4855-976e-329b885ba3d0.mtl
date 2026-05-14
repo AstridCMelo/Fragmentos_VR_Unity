@@ -1,0 +1,16 @@
+# Blender 5.0.1 MTL File: 'None'
+# www.blender.org
+
+newmtl tripo_mat_284812c6-0b46-4855-976e-329b885ba3d0
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd bedroom3dmodel_basecolor.JPEG
+map_Ns bedroom3dmodel_roughness.JPEG
+map_Pr bedroom3dmodel_roughness.JPEG
+map_refl bedroom3dmodel_metallic.JPEG
+map_Pm bedroom3dmodel_metallic.JPEG
+map_Bump -bm 1.000000 bedroom3dmodel_normal.JPEG

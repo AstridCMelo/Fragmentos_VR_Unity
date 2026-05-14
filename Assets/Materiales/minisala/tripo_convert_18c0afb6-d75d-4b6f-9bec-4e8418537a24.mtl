@@ -1,0 +1,16 @@
+# Blender 5.0.1 MTL File: 'None'
+# www.blender.org
+
+newmtl tripo_mat_18c0afb6-d75d-4b6f-9bec-4e8418537a24
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd livingroomfurniture3dmodel_basecolor.JPEG
+map_Ns livingroomfurniture3dmodel_roughness.JPEG
+map_Pr livingroomfurniture3dmodel_roughness.JPEG
+map_refl livingroomfurniture3dmodel_metallic.JPEG
+map_Pm livingroomfurniture3dmodel_metallic.JPEG
+map_Bump -bm 1.000000 livingroomfurniture3dmodel_normal.JPEG
