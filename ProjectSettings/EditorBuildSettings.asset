@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/0 (1).unity
     guid: 5ca13d7d13245e04685df410626095a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sala.unity
     guid: df2e2f86a8f24e748aff56cdb9abefbe
   m_configObjects:
