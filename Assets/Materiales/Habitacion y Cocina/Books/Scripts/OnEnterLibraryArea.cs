@@ -44,19 +44,19 @@ public class OnEnterLibraryArea : MonoBehaviour
     public void EnterInteraction()
     {
         //Bloquear movimiento mientras interactua
-        continuousTurn.SetActive(false);
+        //continuousTurn.SetActive(false);
         //snapTurn.SetActive(true);
-        continuousMove.SetActive(false);
-        leftController.SetActive(false);
-        interactingMinigame = true;
+        //continuousMove.SetActive(false);
+        //leftController.SetActive(false);
+        //interactingMinigame = true;
         //xrOriginAngleInicial = xrOrigin.rotation.eulerAngles.y;
     }
     public void ExitInteraction()
     {
-        continuousTurn.SetActive(true);
+        //continuousTurn.SetActive(true);
         //snapTurn.SetActive(false);
-        continuousMove.SetActive(true);
-        leftController.SetActive(true);
+        //continuousMove.SetActive(true);
+        //leftController.SetActive(true);
         interactingMinigame = false;
         Debug.Log("Salio de restricciones");
         anchorEndMinigame.Teleport();
