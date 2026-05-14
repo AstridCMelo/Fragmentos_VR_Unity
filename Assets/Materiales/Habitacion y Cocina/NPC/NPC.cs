@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour, IInteractableNPC
     public bool startBlockPlayed = false;
     public bool minigameCompleted = false;
 
-    private int loopBlockIndex = 1;
+    private int loopBlockIndex = 0;
     private int maxloopIndex = 1;
     private int minloopIndex = 1;
 
@@ -172,26 +172,57 @@ public class NPC : MonoBehaviour, IInteractableNPC
 
     public void ActiveBlock()
     {
-        int lastIndex = dialogueData.dialogueblockNPC.Length - 1;
-        minloopIndex = 1;
-        maxloopIndex = lastIndex-1;
+        bool endStart = false;
 
-        if (!startBlockPlayed)
+        foreach (DialogueBlock block in dialogueData.dialogueblockNPC)
         {
-            activedialogueLinesNPC = dialogueData.dialogueblockNPC[0].dialogueLinesNPC;
-            activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[0].NPCorPlayerDialogLine;
-            activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[0].dialogueVoicesNPC;
-            startBlockPlayed = true;
+            if (block.dialogueBlockState != NPCDialog.DialogueBlockState.loop)
+            {
+                endStart = true;
+                loopBlockIndex = 1;
+            }
         }
-        else if (minigameCompleted)
+
+        if (endStart)
         {
-            activedialogueLinesNPC = dialogueData.dialogueblockNPC[lastIndex].dialogueLinesNPC;
-            activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[lastIndex].NPCorPlayerDialogLine;
-            activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[lastIndex].dialogueVoicesNPC;
+            int lastIndex = dialogueData.dialogueblockNPC.Length - 1;
+            minloopIndex = 1;
+            maxloopIndex = lastIndex - 1;
+
+            if (!startBlockPlayed)
+            {
+                activedialogueLinesNPC = dialogueData.dialogueblockNPC[0].dialogueLinesNPC;
+                activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[0].NPCorPlayerDialogLine;
+                activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[0].dialogueVoicesNPC;
+                startBlockPlayed = true;
+            }
+            else if (minigameCompleted)
+            {
+                activedialogueLinesNPC = dialogueData.dialogueblockNPC[lastIndex].dialogueLinesNPC;
+                activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[lastIndex].NPCorPlayerDialogLine;
+                activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[lastIndex].dialogueVoicesNPC;
+            }
+            else
+            {
+                if (loopBlockIndex > maxloopIndex)
+                {
+                    loopBlockIndex = minloopIndex;
+                }
+
+                activedialogueLinesNPC = dialogueData.dialogueblockNPC[loopBlockIndex].dialogueLinesNPC;
+                activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[loopBlockIndex].NPCorPlayerDialogLine;
+                activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[loopBlockIndex].dialogueVoicesNPC;
+                startBlockPlayed = true;
+
+                loopBlockIndex++;
+            }
         }
         else
         {
-            if (loopBlockIndex > maxloopIndex )
+            minloopIndex = 0;
+            maxloopIndex = dialogueData.dialogueblockNPC.Length-1;
+
+            if (loopBlockIndex > maxloopIndex)
             {
                 loopBlockIndex = minloopIndex;
             }
@@ -199,13 +230,10 @@ public class NPC : MonoBehaviour, IInteractableNPC
             activedialogueLinesNPC = dialogueData.dialogueblockNPC[loopBlockIndex].dialogueLinesNPC;
             activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[loopBlockIndex].NPCorPlayerDialogLine;
             activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[loopBlockIndex].dialogueVoicesNPC;
-            startBlockPlayed = true;
 
             loopBlockIndex++;
         }
     }
-
-    
 }
 
 //Evitar que se pueda mover hasta que acabe de interactuar con el NPC

@@ -10,12 +10,12 @@ public class OnEnterLibraryArea : MonoBehaviour
     public TeleportPlayer anchorEndMinigame;
 
     //public GameObject xrOrigin;
-    public GameObject continuousTurn;
+    //public GameObject continuousTurn;
     //public GameObject teleport;
-    public GameObject continuousMove;
+    //public GameObject continuousMove;
     //public GameObject snapTurn;
-    public GameObject leftController;
-    public Transform xrOrigin;
+    //public GameObject leftController;
+    //public Transform xrOrigin;
     //private float xrOriginAngle;
     //private float xrOriginAngleInicial;
 
