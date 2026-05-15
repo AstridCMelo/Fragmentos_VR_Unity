@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MiniGamePhone : MonoBehaviour, IRegisterNumber
 {
@@ -71,9 +72,12 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
         }
     }
 
+    public AudioSource audioSource;
+    public AudioClip sonidoFragmento;
     public void UnlockFragment()
     {
         Debug.Log("Interfaz fragmento");
+        audioSource.PlayOneShot(sonidoFragmento);
         ImageFragmento.ShowImage();
     }
 }
