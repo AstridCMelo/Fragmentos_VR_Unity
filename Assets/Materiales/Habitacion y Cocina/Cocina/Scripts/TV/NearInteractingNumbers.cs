@@ -24,23 +24,27 @@ public class NearInteractingNumbers : MonoBehaviour
 
     private void GrabbedEnd(SelectExitEventArgs arg0)
     {
-        if (numberCol.gameObject.CompareTag("NumberPhoneSelected"))
+        if (numberSelected)
         {
-            Renderer rendNumber = numberCol.gameObject.GetComponent<Renderer>();
-            rendNumber.material = matDesactiveNumber;
-            numberCol.gameObject.tag = "Number";
-            numberSelected = false;
-        }  
+            if (numberCol.gameObject.CompareTag("NumberPhoneSelected"))
+            {
+                Renderer rendNumber = numberCol.gameObject.GetComponent<Renderer>();
+                rendNumber.material = matDesactiveNumber;
+                numberCol.gameObject.tag = "Number";
+                numberSelected = false;
+                PhoneRotate.grabNumber = false;
+            }
+        }
     }
+
     private void GrabbedBy(SelectEnterEventArgs args)
     {
-
         var interactor = args.interactorObject;
         Transform contactPoint = interactor.GetAttachTransform(null);
 
         Collider[] colliders = Physics.OverlapSphere(contactPoint.position, 0.004f);
 
-        foreach(Collider col in colliders)
+        foreach (Collider col in colliders)
         {
             if (col.gameObject.CompareTag("Number"))
             {
@@ -50,9 +54,9 @@ public class NearInteractingNumbers : MonoBehaviour
                 Renderer rendNumber = numberCol.gameObject.GetComponent<Renderer>();
                 rendNumber.material = matSelectedNumber;
                 numberSelected = true;
+                PhoneRotate.grabNumber = true;
                 break;
             }
         }
     }
-
 }

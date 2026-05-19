@@ -32,14 +32,17 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
     public void RegisterNumber(int number)
     {
         countRegisterNumbers++;
-        if(countRegisterNumbers <= 4)
+        if (countRegisterNumbers <= 4)
         {
-            numbers.Add(number);
-            textoController.ChangeText(textosNumeros[countRegisterNumbers-1], number);
-
-            if (countRegisterNumbers == 4)
+            if (number < 10)
             {
-                VerifyDate();
+                numbers.Add(number);
+                textoController.ChangeText(textosNumeros[countRegisterNumbers - 1], number);
+
+                if (countRegisterNumbers == 4)
+                {
+                    VerifyDate();
+                }
             }
         }
 

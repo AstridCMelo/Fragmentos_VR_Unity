@@ -46,18 +46,21 @@ public class AudioPhoneManager : MonoBehaviour, IRegisterNumber
 
     public void RegisterNumber(int number)
     {
-        if(number == 0 || number == 10)
+        if (number < inicios.Length)
         {
-            audioSource.clip = clipsNumbers[clipsNumbers.Length - 1];
-            audioSource.time = inicios[clipsNumbers.Length - 1];
-        }
-        else
-        {
-            audioSource.clip = clipsNumbers[number-1];
-            audioSource.time = inicios[number - 1];
-        }
-        reproduced = false;
+            if (number == 0 || number == 10)
+            {
+                audioSource.clip = clipsNumbers[clipsNumbers.Length - 1];
+                audioSource.time = inicios[clipsNumbers.Length - 1];
+            }
+            else
+            {
+                audioSource.clip = clipsNumbers[number - 1];
+                audioSource.time = inicios[number - 1];
+            }
+            reproduced = false;
 
+        }
     }
 
     //Cambios aleatorios en el sonido para evitar que se canse el oido
@@ -82,3 +85,4 @@ public class AudioPhoneManager : MonoBehaviour, IRegisterNumber
         }
     }
 }
+
