@@ -23,20 +23,20 @@ MonoBehaviour:
     - "Creo que lo dej\xE9 por aqu\xED."
     NPCorPlayerDialogLine: 010101
     dialogueVoicesNPC:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3c802734b248b7d449942db7df0626df, type: 3}
+    - {fileID: 8300000, guid: 67d58078ddcc4654db04cd322aa9a90d, type: 3}
+    - {fileID: 8300000, guid: 718e11f3853b41846bf7ba1a6dc7b1a1, type: 3}
     dialogueBlockState: 1
   - dialogueLinesNPC:
     - "A m\xED me gusta jugar acomodando las primeras letras de esos libros."
     - A veces forman palabras.
     NPCorPlayerDialogLine: 0101
     dialogueVoicesNPC:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: c7fe239f2fe18714584b1aca89e5c077, type: 3}
+    - {fileID: 8300000, guid: 834f62a102adece4880b8eb0b64ff555, type: 3}
     dialogueBlockState: 1
   autoProgressLines: 0101010101
   autoProgressDelay: 1.5
-  typingSpeed: 0.15
+  typingSpeed: 0.05
   voiceeSound: {fileID: 8300000, guid: 202992a9c5c6ef74b93e174f6a3957e7, type: 3}
-  voicePitch: 0.97
+  voicePitch: 1

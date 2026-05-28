@@ -36,6 +36,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-7507421656255893935
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: ac0734af99c905346a21b8e09766ade6
+  m_EffectName: Attenuation
+  m_MixLevel: a5fd5e81acca9274d852338792844165
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-7314822500994851777
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -58,6 +72,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6799474859732618946
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Libros
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 47898547985e4d2489f9e18159c97e79
+  m_Children: []
+  m_Volume: 15c50b6674354ac4ea9a7f44ac15fbab
+  m_Pitch: cecd2e39bf4de9a48be2fe2c4767f887
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7507421656255893935}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-6383049357826622766
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -96,6 +129,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-5948657145035262757
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: de9e3de7780d421449e14cb4a50fdc80
+  m_EffectName: Attenuation
+  m_MixLevel: 4641087133988e147a80ec3e69ad0aba
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5185997976106172468
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -210,6 +257,8 @@ AudioMixerController:
     - bf52e6793d3d7a34a8dfbbde69c7a71a
     - 89756df1873d81f46b7eb489439b9cad
     - 186b1e466948d7e45942e4e17fdd22d5
+    - 5c8fee997fdd44045bbc0468fb5587e1
+    - 47898547985e4d2489f9e18159c97e79
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500003}
@@ -229,6 +278,8 @@ AudioMixerGroupController:
   - {fileID: -3419761485855064763}
   - {fileID: -6383049357826622766}
   - {fileID: -5185997976106172468}
+  - {fileID: 6970284303346607398}
+  - {fileID: -6799474859732618946}
   m_Volume: 0658889d5c88bf940b82d78b8d39562e
   m_Pitch: 0d4bed6fb113d6f4089b817171a98447
   m_Send: 00000000000000000000000000000000
@@ -307,6 +358,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: a069d6b9a45325b43b6121c1de0b82fa
   m_FloatValues:
+    91255000997a65549aa423dac54142ea: 0.09274156
     9d315510bbbe3234f81f9ab55034eb95: 0.025578512
     58c9ed10d34cdd24f96279ad753b5c44: 0
     49ea3420a4d17de47999009a7def04ef: 138
@@ -337,21 +389,26 @@ AudioMixerSnapshotController:
     893273b3a2abd4048aa5c1ad6512d7de: 1
     03939eb341cc86440a3b7f811113cd27: 0.385
     2cf715c32cf694e4d977b3798f5f8bb2: 90
+    86c519d3a77750143883af2842cb6f0a: 10
+    258e4ed3320ac2445b1048b02eb852ac: 0
     d2fdf2145b59fee4595a326c28abd184: 0
     de1b983492eda6c47b6ef47105b52dda: 0.97
     2e7f0254e7d38fd4eb3152ed5ccbaf19: 120
     820d8864a3100854b99c649ce38e7f1c: 1
     017e1c84d5ff649438cf7217f015a04f: 100
     f55c0bb461c06f4419674ef5c9fa9953: 1
+    98c9cdc47fe9d4d429de2a542efc9b4f: 5.6
     229fbec47d0de58408d0541ea2fa4c0e: 1.17
     abfbfc050860db245bf53dd271c08b77: 1
     c04dfb256afb48d499bb4540ed5265bb: 0.696
     eedb6e2560b96954f80a6216a070957a: 0.4
     303fc745a72601041bf9b8fe7d9fc33d: 20
+    f95a2055c2f3e494cb60ef23d4af1966: -17.7
     c6d3fa55e85ddbe489d20e1e07efba6f: 0.97
     d046de7513d8e0b4fa166ea7382ecdaf: 0.511
     d3e2b68513d653740a78c0c9c694e7c7: 100
     5f0898855add70243aa14b3ea2677074: 1
+    0e081985bab75ea42adcf2e7c2dafefc: 10
     3dc38f8562140d74fb2ed481c534d058: 0
     01578495ccbabed42984621c044e5d72: 0.97
     77d987a5a23fe9f40bc2a0ef32d60de5: 122
@@ -397,6 +454,7 @@ AudioMixerSnapshotController:
     15ef323a36019924ca28f74bdd24e24c: 0
     686ebe5a2690c5e479c8116b11041079: 0
     4b58a99a50aafe74793b5dd2bedb0a96: 0.064
+    5ec266ba8f2d1c64eae4934a77bf6f48: 150
     81eebcba61cc4d94bbc3e7c351b3cf37: 0
     333585ca979bacf4eba5c4fee2741c4b: 0.273
     cad86ecad0994a1468302748ea994d5c: 111
@@ -407,11 +465,13 @@ AudioMixerSnapshotController:
     1c5e237b02d4533429539a0a6df19853: 0
     d887dc8b995a9174aab8c8b0de3b0733: 0.97
     fe36acab8a96d0046bafeb9e18a753df: 0.073
+    d3712bbb4f936364db5e4c268ff06361: -18
     34546ccb2e240cd48bcca671564120ce: 0
     5cbf6ddbb7026dc45abe06cc43322e1c: 3
     cc132edbccace48469977b60edca52a5: 0.447
     4cff19eb609afd84992763e1020b8181: 1
     a7077ffb091b65b4dbcb5026128b2c5e: -25
+    67353a1cc349ba5419417dcc040257f3: 18.1
     c6cc7e2c3e902d94abdabdddc5a41800: 1
     2883db3c75b4127489b7549dabc871af: 0.67
     8998a24c4360c93478ec02f063d9b337: 0
@@ -452,6 +512,7 @@ AudioMixerSnapshotController:
     7ccabb5f18fe7824da14df39f37a68ec: 72
     0d4bed6fb113d6f4089b817171a98447: 1
     d90c93cfc45013545b3760e70f40dd9c: 0.65
+    203b52dfd3d8511449d79c2f0ae35b59: 20
   m_TransitionOverrides: {}
 --- !u!245 &245000012928175524
 AudioMixerSnapshotController:
@@ -653,6 +714,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 5121475289209358941}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &6970284303346607398
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Telefono_Sounds
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 5c8fee997fdd44045bbc0468fb5587e1
+  m_Children: []
+  m_Volume: 72e33541a47124944a2bc375ef8b27d1
+  m_Pitch: fd27c7b5d360bd04e954e1497064a2a7
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5948657145035262757}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0

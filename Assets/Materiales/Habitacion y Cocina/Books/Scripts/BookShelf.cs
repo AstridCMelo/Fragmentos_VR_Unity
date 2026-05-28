@@ -12,6 +12,10 @@ public class BookShelf : MonoBehaviour
 {
     public UIController panel;
     public OnEnterLibraryArea interaction;
+    private AudioSource audioBook;
+
+    [SerializeField] private AudioClip dropBook;
+    [SerializeField] private AudioClip grabBook;
 
     [SerializeField] private string word;
     private List<char> initialLetters = new List<char>();
@@ -26,6 +30,8 @@ public class BookShelf : MonoBehaviour
     private bool dropbook = false;
     public void Start()
     {
+
+        audioBook = GetComponent<AudioSource>();
         //Sockets deben estar de izquierda a derecha como se leeen
         GetComponentsInChildren<XRSocketInteractor>(socketInteractorList);
         Debug.Log(socketInteractorList.Count);
@@ -224,6 +230,4 @@ public class BookShelf : MonoBehaviour
         }
         dropbook = false;
     }
-
-
 }
