@@ -16,6 +16,8 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
     public TMP_Text tmpText2;
     public TMP_Text tmpText3;
     public TMP_Text tmpText4;
+    public TeleportPlayer anchorEndMinigame;
+    public UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor anchor;
 
     [SerializeField] private AudioSource busyPhone;
     [SerializeField] private AudioClip busyPhoneClip;
@@ -110,5 +112,6 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
         Debug.Log("Interfaz fragmento");
         audioSource.PlayOneShot(sonidoFragmento);
         ImageFragmento.ShowImage();
+        anchorEndMinigame.Teleport(anchor);
     }
 }
