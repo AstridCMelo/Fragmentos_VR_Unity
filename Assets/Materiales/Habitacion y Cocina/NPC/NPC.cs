@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour, IInteractableNPC
     public Image portraitImageNPC;
 
     public GameObject interactionPanel;
+    [SerializeField] private SoundEffectManager npcSoundEffectManager;
 
     private int dialogueIndex;
     private bool PlayerTalking;
@@ -126,7 +127,7 @@ public class NPC : MonoBehaviour, IInteractableNPC
             portraitImageNPC.sprite = dialogueData.playerPortrait;
         }
 
-        SoundEffectManager.PlayNpc(activeNPCorPlayerDialogClip[dialogueIndex], 1.0f);
+        npcSoundEffectManager.PlayNpc(activeNPCorPlayerDialogClip[dialogueIndex], 1.0f);
     }
 
     IEnumerator TypeLine()
@@ -178,7 +179,7 @@ public class NPC : MonoBehaviour, IInteractableNPC
     public void EndDialogue()
     {
         StopAllCoroutines();
-        SoundEffectManager.StopNpc();
+        npcSoundEffectManager.StopNpc();
         isDialogueActive = false;
         dialogueText.SetText("");
         dialogPanel.SetActive(false);

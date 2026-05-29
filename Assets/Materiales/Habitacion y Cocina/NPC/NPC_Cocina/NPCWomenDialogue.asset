@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
   npcName: "Mam\xE1"
   playerName: Hijo
-  npcPortrait: {fileID: 21300000, guid: adaef6de483e8e44fae13a41f66d00db, type: 3}
+  npcPortrait: {fileID: 21300000, guid: f874aedf931c3204c896e05c4dd68b69, type: 3}
   playerPortrait: {fileID: 0}
   dialogueblockNPC:
   - dialogueLinesNPC:

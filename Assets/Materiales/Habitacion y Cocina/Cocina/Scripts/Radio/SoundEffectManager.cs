@@ -4,23 +4,16 @@ using UnityEngine.Audio;
 
 public class SoundEffectManager : MonoBehaviour
 {
-    private static SoundEffectManager instance;
-
-    private static AudioSource npcAudioSource;
+    private AudioSource npcAudioSource;
 
     private float fadeTime = 0.25f;
-
-    public void Awake()
-    {
-        instance = this;
-    }
 
     private void Start()
     {
         npcAudioSource = GetComponent<AudioSource>();
     }
 
-    public static void PlayNpc(AudioClip audioNpc, float pitch = 1f)
+    public void PlayNpc(AudioClip audioNpc, float pitch = 1f)
     {
         npcAudioSource.Stop();
         npcAudioSource.pitch = pitch;
@@ -31,6 +24,7 @@ public class SoundEffectManager : MonoBehaviour
         {
             npcAudioSource.clip = audioNpc;
             npcAudioSource.Play();
+            npcAudioSource.volume = 1f;
         }
 
     }
@@ -54,9 +48,9 @@ public class SoundEffectManager : MonoBehaviour
 
     }
 
-    public static void StopNpc()
+    public void StopNpc()
     {
-        instance.StartCoroutine(instance.FadeOut());
+       StartCoroutine(FadeOut());
     }
 
   

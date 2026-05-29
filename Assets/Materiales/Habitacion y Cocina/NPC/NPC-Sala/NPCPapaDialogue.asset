@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
   npcName: "Pap\xE1"
   playerName: Hijo
-  npcPortrait: {fileID: 21300000, guid: d4103e528fd70db46995f53f6400c378, type: 3}
+  npcPortrait: {fileID: 21300000, guid: 58f02bd43b7941c4097314e84100bf5b, type: 3}
   playerPortrait: {fileID: 0}
   dialogueblockNPC:
   - dialogueLinesNPC:
     - "Hola\u2026 \xBFotra vez dejando todo tirado? "
     - "Pap\xE1\u2026 \xBFqu\xE9 hago aqu\xED? "
-    - " Eso mismo me pregunto yo\u2026 siempre vuelves cuando pierdes algo. "
+    - "Eso mismo me pregunto yo\u2026 siempre vuelves cuando pierdes algo. "
     - Yo no he perdido nada.
-    - " \xBFSeguro? Mira alrededor\u2026 esta casa guarda m\xE1s de lo que crees. "
+    - "\xBFSeguro? Mira alrededor\u2026 esta casa guarda m\xE1s de lo que crees. "
     NPCorPlayerDialogLine: 0100010001
     dialogueVoicesNPC:
     - {fileID: 8300000, guid: 16f5386bc0f01f945aa4fdb78a646d9b, type: 3}
@@ -34,7 +34,7 @@ MonoBehaviour:
   - dialogueLinesNPC:
     - "\xBFT\xFA viste algo\u2026 m\xEDo? "
     - "Encontr\xE9 algo, s\xED\u2026 pero no supe d\xF3nde ponerlo. "
-    - " \xBFY d\xF3nde est\xE1? "
+    - "\xBFY d\xF3nde est\xE1? "
     - "Hay cosas que solo aparecen cuando sabes qu\xE9 est\xE1s buscando. "
     NPCorPlayerDialogLine: 00010001
     dialogueVoicesNPC:
@@ -53,7 +53,7 @@ MonoBehaviour:
     dialogueBlockState: 1
   - dialogueLinesNPC:
     - "\u2026ah\xED est\xE1. "
-    - " \xBFT\xFA sab\xEDas? "
+    - "\xBFT\xFA sab\xEDas? "
     - "Solo lo estaba cuidando\u2026 hasta que volvieras. "
     NPCorPlayerDialogLine: 010001
     dialogueVoicesNPC:
