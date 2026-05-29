@@ -61,7 +61,9 @@ public class PhoneRotate : MonoBehaviour
     private void GrabbedBy(SelectEnterEventArgs args)
     {
         audioManager = GetComponent<AudioPhoneManager>();
-        interactor = GetComponent<XRGrabInteractable>().firstInteractorSelecting;
+        interactor = args.interactorObject;
+
+        //interactor = GetComponent<XRGrabInteractable>().firstInteractorSelecting;
         // PhoneRotate.returnPosition = false;
         grabNumber = true;
 
@@ -92,7 +94,7 @@ public class PhoneRotate : MonoBehaviour
             ReturnAntiClockwise();
 
         }
-        else if (grabNumber)
+        else if (grabNumber == true && interactor != null && NearInteractingNumbers.numberSelected == true)
         {
             var currentPosition = GetInteractorPosition();
             RotateClockwise(currentPosition);
@@ -142,3 +144,4 @@ public class PhoneRotate : MonoBehaviour
         }
     }
 }
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MiniGamePhone : MonoBehaviour, IRegisterNumber
 {
@@ -31,14 +32,17 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
     public void RegisterNumber(int number)
     {
         countRegisterNumbers++;
-        if(countRegisterNumbers <= 4)
+        if (countRegisterNumbers <= 4)
         {
-            numbers.Add(number);
-            textoController.ChangeText(textosNumeros[countRegisterNumbers-1], number);
-
-            if (countRegisterNumbers == 4)
+            if (number < 10)
             {
-                VerifyDate();
+                numbers.Add(number);
+                textoController.ChangeText(textosNumeros[countRegisterNumbers - 1], number);
+
+                if (countRegisterNumbers == 4)
+                {
+                    VerifyDate();
+                }
             }
         }
 
@@ -71,9 +75,12 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
         }
     }
 
+    public AudioSource audioSource;
+    public AudioClip sonidoFragmento;
     public void UnlockFragment()
     {
         Debug.Log("Interfaz fragmento");
+        audioSource.PlayOneShot(sonidoFragmento);
         ImageFragmento.ShowImage();
     }
 }

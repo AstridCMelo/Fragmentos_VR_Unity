@@ -18,7 +18,7 @@ public class OnLimiter : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(NearInteractingNumbers.numberSelected)
+        if (NearInteractingNumbers.numberSelected)
         {
             //El numero seleccionado se calcula a partir de las colisiones con el trigger del limitador
             selectedNumber++;
@@ -64,7 +64,7 @@ public class OnLimiter : MonoBehaviour
 
         PhoneRotate.grabNumber = false;
         //countRegisterNumbers++;
-        if(selectedNumber == 10)
+        if (selectedNumber == 10)
         {
             selectedNumber = 0;
         }
@@ -85,7 +85,8 @@ public class OnLimiter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 }
+

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -160,11 +161,14 @@ public class BookShelf : MonoBehaviour
         Debug.Log(currentword);
     }
 
+    public AudioSource audioSource;
+    public AudioClip sonidoFragmento;
     public void VerifyOrganizedWord()
     {
         if (word == currentword)
         {
             Debug.Log("Interfaz fragmento");
+            audioSource.PlayOneShot(sonidoFragmento);
             panel.ShowImage();
             interaction.minigameCompleted = true;
             interaction.ExitInteraction();
