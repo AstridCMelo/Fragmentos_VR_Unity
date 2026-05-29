@@ -113,5 +113,6 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
         audioSource.PlayOneShot(sonidoFragmento);
         ImageFragmento.ShowImage();
         anchorEndMinigame.Teleport(anchor);
+        MiniGamesState.minigame3Completed = true;
     }
 }

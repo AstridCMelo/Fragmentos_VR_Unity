@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
   m_Name: NPCWomenDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  minigameAsociated: 3
   npcName: "Mam\xE1"
   playerName: Hijo
   npcPortrait: {fileID: 21300000, guid: f874aedf931c3204c896e05c4dd68b69, type: 3}

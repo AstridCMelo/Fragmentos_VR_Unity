@@ -175,6 +175,7 @@ public class BookShelf : MonoBehaviour
             panel.ShowImage();
             interaction.minigameCompleted = true;
             interaction.ExitInteraction();
+            MiniGamesState.minigame2Completed = true;
         }
     }
 

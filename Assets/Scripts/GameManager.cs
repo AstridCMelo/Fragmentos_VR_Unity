@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             }
 
             StartCoroutine(AbrirPuertaSuave());
+            MiniGamesState.minigame1Completed = true;
         }
     }
 

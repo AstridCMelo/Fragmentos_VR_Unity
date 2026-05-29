@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
   m_Name: NPCHermanaDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  minigameAsociated: 2
   npcName: Hermana
   playerName: Hijo
   npcPortrait: {fileID: 0}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
   m_Name: NPCPapaDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  minigameAsociated: 1
   npcName: "Pap\xE1"
   playerName: Hijo
   npcPortrait: {fileID: 21300000, guid: 58f02bd43b7941c4097314e84100bf5b, type: 3}

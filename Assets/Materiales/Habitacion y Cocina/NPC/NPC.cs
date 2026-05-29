@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -198,26 +199,39 @@ public class NPC : MonoBehaviour, IInteractableNPC
                     break;
                 }
             }
-
         }
 
         if (endStart)
         {
+            if (dialogueData.minigameAsociated == 1)
+            {
+                minigameCompleted = MiniGamesState.minigame1Completed;
+            }
+            else if (dialogueData.minigameAsociated == 2)
+            {
+                minigameCompleted = MiniGamesState.minigame2Completed;
+            }
+            else
+            {
+                minigameCompleted = MiniGamesState.minigame3Completed;
+            }
+
+
             int lastIndex = dialogueData.dialogueblockNPC.Length - 1;
             minloopIndex = 1;
             maxloopIndex = lastIndex - 1;
 
-            if (!startBlockPlayed)
-            {
-                activedialogueLinesNPC = dialogueData.dialogueblockNPC[0].dialogueLinesNPC;
-                activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[0].NPCorPlayerDialogLine;
-                activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[0].dialogueVoicesNPC;
-            }
-            else if (minigameCompleted)
+            if (minigameCompleted)
             {
                 activedialogueLinesNPC = dialogueData.dialogueblockNPC[lastIndex].dialogueLinesNPC;
                 activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[lastIndex].NPCorPlayerDialogLine;
                 activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[lastIndex].dialogueVoicesNPC;
+            }
+            else if (!startBlockPlayed)
+            {
+                activedialogueLinesNPC = dialogueData.dialogueblockNPC[0].dialogueLinesNPC;
+                activeNPCorPlayerDialogLine = dialogueData.dialogueblockNPC[0].NPCorPlayerDialogLine;
+                activeNPCorPlayerDialogClip = dialogueData.dialogueblockNPC[0].dialogueVoicesNPC;
             }
             else
             {
@@ -237,7 +251,7 @@ public class NPC : MonoBehaviour, IInteractableNPC
         else
         {
             minloopIndex = 0;
-            maxloopIndex = dialogueData.dialogueblockNPC.Length-1;
+            maxloopIndex = dialogueData.dialogueblockNPC.Length - 1;
 
             if (loopBlockIndex > maxloopIndex)
             {
