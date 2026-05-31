@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
   m_Name: NPCWomenDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  minigameAsociated: 3
   npcName: "Mam\xE1"
   playerName: Hijo
-  npcPortrait: {fileID: 21300000, guid: adaef6de483e8e44fae13a41f66d00db, type: 3}
+  npcPortrait: {fileID: 21300000, guid: f874aedf931c3204c896e05c4dd68b69, type: 3}
   playerPortrait: {fileID: 0}
   dialogueblockNPC:
   - dialogueLinesNPC:
@@ -23,9 +24,9 @@ MonoBehaviour:
     - Nada que no haya pasado antes.
     NPCorPlayerDialogLine: 010001
     dialogueVoicesNPC:
-    - {fileID: 8300000, guid: adf5647f7abea6e44bf87e75de323433, type: 3}
-    - {fileID: 0}
-    - {fileID: 8300000, guid: da2a55dcc244dc647bd11817b497db73, type: 3}
+    - {fileID: 8300000, guid: 492e315c220c30d48b5dc3006db216cd, type: 3}
+    - {fileID: 8300000, guid: e25310b1709df3842bcfa74b8899b847, type: 3}
+    - {fileID: 8300000, guid: 7fcedcd943497354989c915a9eeb208d, type: 3}
     dialogueBlockState: 0
   - dialogueLinesNPC:
     - 'No logro hacerlo funcionar. '
@@ -33,22 +34,30 @@ MonoBehaviour:
     - " Entonces, \xBFc\xF3mo? "
     - "Como cuando busc\xE1bamos una emisora. "
     NPCorPlayerDialogLine: 00010001
-    dialogueVoicesNPC: []
+    dialogueVoicesNPC:
+    - {fileID: 8300000, guid: 08c1b20d5435a444ea17239cba65af7b, type: 3}
+    - {fileID: 8300000, guid: 3efffc4d8b979784a99c8cc3b7a2e6eb, type: 3}
+    - {fileID: 8300000, guid: 9d87ad9284ddf754dba189d6975a819a, type: 3}
+    - {fileID: 8300000, guid: 7c79c065515b9e841a432c6a0bba909d, type: 3}
     dialogueBlockState: 1
   - dialogueLinesNPC:
     - "Creo que estoy cerca\u2026 "
     - "No pienses tanto\u2026 escucha. "
     NPCorPlayerDialogLine: 0001
-    dialogueVoicesNPC: []
+    dialogueVoicesNPC:
+    - {fileID: 8300000, guid: 4f2fa698af5a9c54f9ccebccee21c7cb, type: 3}
+    - {fileID: 8300000, guid: 6ea07d9d1d58fe340bf574911ed64b58, type: 3}
     dialogueBlockState: 1
   - dialogueLinesNPC:
     - "\u2026ya. "
     - "\xBFVes? Nunca se fue. "
     NPCorPlayerDialogLine: 0001
-    dialogueVoicesNPC: []
+    dialogueVoicesNPC:
+    - {fileID: 8300000, guid: b4e859348e72a0b418541119a346c92e, type: 3}
+    - {fileID: 8300000, guid: 6ba2e70cea31dc34db58695269c3b234, type: 3}
     dialogueBlockState: 2
   autoProgressLines: 0101010101
   autoProgressDelay: 1.5
-  typingSpeed: 0.25
+  typingSpeed: 0.05
   voiceeSound: {fileID: 8300000, guid: 202992a9c5c6ef74b93e174f6a3957e7, type: 3}
   voicePitch: 0.97

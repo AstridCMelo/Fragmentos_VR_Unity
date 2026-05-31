@@ -8,6 +8,7 @@ public class OnEnterLibraryArea : MonoBehaviour
     public bool interactingMinigame = false;
     public bool minigameCompleted = false;
     public TeleportPlayer anchorEndMinigame;
+    public UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor anchor;
 
     //public GameObject xrOrigin;
     //public GameObject continuousTurn;
@@ -59,7 +60,7 @@ public class OnEnterLibraryArea : MonoBehaviour
         //leftController.SetActive(true);
         interactingMinigame = false;
         Debug.Log("Salio de restricciones");
-        anchorEndMinigame.Teleport();
+        anchorEndMinigame.Teleport(anchor);
         
     }
 

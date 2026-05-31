@@ -12,48 +12,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe88f82c02f2ec41b08596b8dac2c89, type: 3}
   m_Name: NPCPapaDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  minigameAsociated: 1
   npcName: "Pap\xE1"
   playerName: Hijo
-  npcPortrait: {fileID: 21300000, guid: d4103e528fd70db46995f53f6400c378, type: 3}
+  npcPortrait: {fileID: 21300000, guid: 58f02bd43b7941c4097314e84100bf5b, type: 3}
   playerPortrait: {fileID: 0}
   dialogueblockNPC:
   - dialogueLinesNPC:
     - "Hola\u2026 \xBFotra vez dejando todo tirado? "
     - "Pap\xE1\u2026 \xBFqu\xE9 hago aqu\xED? "
-    - " Eso mismo me pregunto yo\u2026 siempre vuelves cuando pierdes algo. "
+    - "Eso mismo me pregunto yo\u2026 siempre vuelves cuando pierdes algo. "
     - Yo no he perdido nada.
-    - " \xBFSeguro? Mira alrededor\u2026 esta casa guarda m\xE1s de lo que crees. "
+    - "\xBFSeguro? Mira alrededor\u2026 esta casa guarda m\xE1s de lo que crees. "
     NPCorPlayerDialogLine: 0100010001
     dialogueVoicesNPC:
-    - {fileID: 8300000, guid: adf5647f7abea6e44bf87e75de323433, type: 3}
-    - {fileID: 0}
-    - {fileID: 8300000, guid: da2a55dcc244dc647bd11817b497db73, type: 3}
-    - {fileID: 0}
-    - {fileID: 8300000, guid: 2e3f137a3229c7643be50ba8f22b301c, type: 3}
+    - {fileID: 8300000, guid: 16f5386bc0f01f945aa4fdb78a646d9b, type: 3}
+    - {fileID: 8300000, guid: 29d47fab67a7de54788bcb2e63cb1cc8, type: 3}
+    - {fileID: 8300000, guid: a898ec5b396d9ba4dbeee85f9d8fdc7c, type: 3}
+    - {fileID: 8300000, guid: f5090dcf55bd91d44b84f6b995e781a6, type: 3}
+    - {fileID: 8300000, guid: 58e13e04393a03e4baf8457cf898657f, type: 3}
     dialogueBlockState: 0
   - dialogueLinesNPC:
     - "\xBFT\xFA viste algo\u2026 m\xEDo? "
     - "Encontr\xE9 algo, s\xED\u2026 pero no supe d\xF3nde ponerlo. "
-    - " \xBFY d\xF3nde est\xE1? "
+    - "\xBFY d\xF3nde est\xE1? "
     - "Hay cosas que solo aparecen cuando sabes qu\xE9 est\xE1s buscando. "
     NPCorPlayerDialogLine: 00010001
-    dialogueVoicesNPC: []
+    dialogueVoicesNPC:
+    - {fileID: 8300000, guid: 78710123e5134784082638011a09e9a5, type: 3}
+    - {fileID: 8300000, guid: 95740468b7175d84c832d3326df2d3f6, type: 3}
+    - {fileID: 8300000, guid: 21dd329a86c91884984f392bb087ed5e, type: 3}
+    - {fileID: 8300000, guid: 77b96f19eb521b34aa960d26d24f6292, type: 3}
     dialogueBlockState: 1
   - dialogueLinesNPC:
     - "No entiendo qu\xE9 estoy buscando."
     - 'Busca algo que no encaja. '
     NPCorPlayerDialogLine: 0001
-    dialogueVoicesNPC: []
+    dialogueVoicesNPC:
+    - {fileID: 8300000, guid: 0df19ff383983814c979e5b87efc5708, type: 3}
+    - {fileID: 8300000, guid: 58a06663a125fa9479ab3501e07b16ce, type: 3}
     dialogueBlockState: 1
   - dialogueLinesNPC:
     - "\u2026ah\xED est\xE1. "
-    - " \xBFT\xFA sab\xEDas? "
+    - "\xBFT\xFA sab\xEDas? "
     - "Solo lo estaba cuidando\u2026 hasta que volvieras. "
     NPCorPlayerDialogLine: 010001
-    dialogueVoicesNPC: []
+    dialogueVoicesNPC:
+    - {fileID: 8300000, guid: f0e721fb7bb00c14988023bbd52e25a7, type: 3}
+    - {fileID: 8300000, guid: b3f0237c30a4bfa40abf5fad21365381, type: 3}
+    - {fileID: 8300000, guid: d6834a0504aec8444b3cb73be239b6cf, type: 3}
     dialogueBlockState: 2
   autoProgressLines: 0101010101
-  autoProgressDelay: 1.5
-  typingSpeed: 0.25
+  autoProgressDelay: 2.5
+  typingSpeed: 0.05
   voiceeSound: {fileID: 8300000, guid: 202992a9c5c6ef74b93e174f6a3957e7, type: 3}
   voicePitch: 0.97

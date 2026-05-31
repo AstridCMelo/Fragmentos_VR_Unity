@@ -1,9 +1,12 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class MiniGamePhone : MonoBehaviour, IRegisterNumber
 {
@@ -13,6 +16,11 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
     public TMP_Text tmpText2;
     public TMP_Text tmpText3;
     public TMP_Text tmpText4;
+    public TeleportPlayer anchorEndMinigame;
+    public UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor anchor;
+
+    [SerializeField] private AudioSource busyPhone;
+    [SerializeField] private AudioClip busyPhoneClip;
 
     [SerializeField] int RightDate = 1986;
 
@@ -31,23 +39,26 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
     }
     public void RegisterNumber(int number)
     {
-        countRegisterNumbers++;
-        if (countRegisterNumbers <= 4)
+        if (number < 10)
         {
-            if (number < 10)
+            countRegisterNumbers++;
+            if (countRegisterNumbers <= 4)
             {
                 numbers.Add(number);
                 textoController.ChangeText(textosNumeros[countRegisterNumbers - 1], number);
 
                 if (countRegisterNumbers == 4)
                 {
-                    VerifyDate();
+                    StartCoroutine(WaitBeforeErase(2f));
+                    //VerifyDate();
                 }
             }
         }
-
+        else
+        {
+            Debug.Log("Se devolvio o paso mas veces, no se registra");
+        }
     }
-
     public void VerifyDate()
     {
         int RegisterDate = 0;
@@ -63,16 +74,35 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
         }
         else
         {
-            foreach(var item in textosNumeros)
-            {
-                textoController.ChangeText(item, -1);
-                countRegisterNumbers--;
-            }
+            //Sonido llamada ocupada
+            busyPhone.clip = busyPhoneClip;
+            busyPhone.pitch = Random.Range(0.8f, 1.2f);
+            busyPhone.loop = false;
+            busyPhone.PlayOneShot(busyPhoneClip);
 
-            countRegisterNumbers = 0;
-            numbers.Clear();
+            EraseNumbers();
 
         }
+    }
+
+    public void EraseNumbers()
+    {
+        foreach (var item in textosNumeros)
+        {
+            textoController.ChangeText(item, -1);
+            countRegisterNumbers--;
+        }
+
+        countRegisterNumbers = 0;
+        numbers.Clear();
+    }
+
+
+    IEnumerator WaitBeforeErase(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        VerifyDate();
     }
 
     public AudioSource audioSource;
@@ -82,5 +112,7 @@ public class MiniGamePhone : MonoBehaviour, IRegisterNumber
         Debug.Log("Interfaz fragmento");
         audioSource.PlayOneShot(sonidoFragmento);
         ImageFragmento.ShowImage();
+        anchorEndMinigame.Teleport(anchor);
+        MiniGamesState.minigame3Completed = true;
     }
 }

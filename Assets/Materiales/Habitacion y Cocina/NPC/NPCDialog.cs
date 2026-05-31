@@ -13,6 +13,8 @@ public class NPCDialog: ScriptableObject
         end
     };
 
+    public int minigameAsociated; 
+
     public string npcName;
     public string playerName;
 

@@ -17,23 +17,23 @@ public class TeleportPlayer : MonoBehaviour
         //Teleport(); // Teleport the player when the scene starts
     }
 
-    public void Teleport()
+    public void Teleport(UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor anchors)
     {
-        if(anchor && provider)
+        if(anchors && provider)
         {
-            UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportRequest request = CreateRequest();
+            UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportRequest request = CreateRequest(anchors);
             provider.QueueTeleportRequest(request);
         }
     }
 
-    private UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportRequest CreateRequest()
+    private UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportRequest CreateRequest(UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationAnchor anchors)
     {
-        Transform anchorTransform = anchor.teleportAnchorTransform;
+        Transform anchorTransform = anchors.teleportAnchorTransform;
 
         UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportRequest request = new UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportRequest()
         {
             requestTime = Time.time,
-            matchOrientation = anchor.matchOrientation,
+            matchOrientation = anchors.matchOrientation,
 
             destinationPosition = anchorTransform.position,
             destinationRotation = anchorTransform.rotation
