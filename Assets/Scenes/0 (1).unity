@@ -2298,6 +2298,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7665068596226851599, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 21108ecd2121ba34bb3e0e9543122f79, type: 3}
+    - target: {fileID: 7665068596226851599, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.50837356
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.66412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.66412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.643
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869507776375554034, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8462199198855069497, guid: 70ce92e40dfe9fc41ac600815234635d, type: 3}
       propertyPath: m_text
       value: Arte
@@ -10639,13 +10675,7 @@ PrefabInstance:
     - {fileID: -1881011999919418153, guid: e1c8a55278d84cd4e99cacab45b8d59f, type: 3}
     - {fileID: -4048988248682406509, guid: e1c8a55278d84cd4e99cacab45b8d59f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: -5657712011066648764, guid: e1c8a55278d84cd4e99cacab45b8d59f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 206695172}
-    - targetCorrespondingSourceObject: {fileID: 4689602005564658139, guid: e1c8a55278d84cd4e99cacab45b8d59f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 190868922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1c8a55278d84cd4e99cacab45b8d59f, type: 3}
 --- !u!4 &968237069 stripped
 Transform:
@@ -12951,7 +12981,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 657332672}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
         m_MethodName: OnHoverEnter
         m_Mode: 1
@@ -12966,7 +12996,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 657332672}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
         m_MethodName: OnHoverExit
         m_Mode: 1
@@ -13034,7 +13064,7 @@ MonoBehaviour:
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 1
-  m_PredictedVisualsTransform: {fileID: 657332669}
+  m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -13681,9 +13711,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e6ec703a80c9ad4e9ce8483c4518021, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1247345280}
-    - targetCorrespondingSourceObject: {fileID: 8536400945726557719, guid: 7e6ec703a80c9ad4e9ce8483c4518021, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 657332672}
   m_SourcePrefab: {fileID: 100100000, guid: 7e6ec703a80c9ad4e9ce8483c4518021, type: 3}
 --- !u!1 &1280473965
 GameObject:
@@ -21845,6 +21872,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopupInstrucciones
   popup: {fileID: 7456995058395881712}
   botonContinuar: {fileID: 5398944945373811352}
+  duracionEntrada: 0.45
+  escalaInicial: 0.88
+  desplazamientoInicialY: -35
+  duracionPopBoton: 0.32
+  escalaPopBoton: 1.18
+  escalaHoverBoton: 1.08
+  audioSource: {fileID: 0}
+  sonidoAparecerPopup: {fileID: 8300000, guid: 6f2a1bf169f1b164394441e93786bfbb, type: 3}
+  sonidoAparecerBoton: {fileID: 8300000, guid: 4d1b2b84087b71140b6a0f2e5627f265, type: 3}
+  sonidoClickBoton: {fileID: 8300000, guid: 313648346cb014f44bfa795212858c33, type: 3}
+  volumenPopup: 0.55
+  volumenBoton: 0.75
+  volumenClickBoton: 0.8
 --- !u!4 &1941435796
 Transform:
   m_ObjectHideFlags: 0
@@ -22443,11 +22483,6 @@ PrefabInstance:
 --- !u!4 &1988351646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 46b2fb768d2f4dac9b98e0281efbea5a, type: 3}
-  m_PrefabInstance: {fileID: 1988351645}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1988351650 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2300000, guid: 46b2fb768d2f4dac9b98e0281efbea5a, type: 3}
   m_PrefabInstance: {fileID: 1988351645}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1988351652
