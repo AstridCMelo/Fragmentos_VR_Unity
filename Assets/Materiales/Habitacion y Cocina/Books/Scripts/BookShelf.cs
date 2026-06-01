@@ -25,9 +25,15 @@ public class BookShelf : MonoBehaviour
     private bool changeState = true;
     //private int pastposition = 0;
     private bool dropbook = false;
+
+    // === NUEVAS VARIABLES: Para la puerta específica de este minijuego ===
+    [Header("Configuración de Puerta de la Biblioteca")]
+    public GameObject puertaBiblioteca; // Arrastra aquí la puerta de la estantería
+    public float anguloApertura = 90f;
+    public float velocidadApertura = 2f;
+
     public void Start()
     {
-
         audioSource = GetComponent<AudioSource>();
         //Sockets deben estar de izquierda a derecha como se leeen
         GetComponentsInChildren<XRSocketInteractor>(socketInteractorList);
@@ -48,12 +54,12 @@ public class BookShelf : MonoBehaviour
             var book = socket.interactablesSelected[0];
             book.selectExited.AddListener(DropBook);
             books.Add(book);
-
         }
     }
+
     public void Update()
     {
-        if(interaction.interactingMinigame == true && interaction.minigameCompleted == false)
+        if (interaction.interactingMinigame == true && interaction.minigameCompleted == false)
         {
             int i = 0;
             int trueOcupedPosition = 0;
@@ -128,14 +134,6 @@ public class BookShelf : MonoBehaviour
 
     public void GetPastPosition()
     {
-        //for(int j = positionsBooks.Count - 1;  j < pastposition; j--)
-        //{
-        //    var socketBookInteractable = socketInteractorList[j - 1].interactablesSelected[0];
-        //    books[j] = socketBookInteractable;
-        //}
-
-        //books[pastposition] =  ;
-
         int i = 0;
         foreach (XRSocketInteractor socket in socketInteractorList)
         {
@@ -166,6 +164,7 @@ public class BookShelf : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip sonidoFragmento;
+
     public void VerifyOrganizedWord()
     {
         if (word == currentword)
@@ -176,6 +175,39 @@ public class BookShelf : MonoBehaviour
             interaction.minigameCompleted = true;
             interaction.ExitInteraction();
             MiniGamesState.minigame2Completed = true;
+
+            // === PARTE AÑADIDA: Activar la puerta propia de este libro si existe ===
+            if (puertaBiblioteca != null)
+            {
+                AudioSource audioPuerta = puertaBiblioteca.GetComponent<AudioSource>();
+                if (audioPuerta != null)
+                {
+                    audioPuerta.Play();
+                }
+
+                StartCoroutine(AbrirPuertaBibliotecaSuave());
+            }
+
+            // También le sumamos el fragmento al GameManager por si necesitas llevar el conteo global
+            if (GameManager.instancia != null)
+            {
+                GameManager.instancia.AgregarFragmento();
+            }
+        }
+    }
+
+    // === NUEVA CORRUTINA: Mueve la puerta asignada a este script ===
+    IEnumerator AbrirPuertaBibliotecaSuave()
+    {
+        Quaternion rotacionInicial = puertaBiblioteca.transform.localRotation;
+        Quaternion rotacionFinal = Quaternion.Euler(0, anguloApertura, 0);
+        float tiempo = 0;
+
+        while (tiempo < 1)
+        {
+            tiempo += Time.deltaTime * velocidadApertura;
+            puertaBiblioteca.transform.localRotation = Quaternion.Slerp(rotacionInicial, rotacionFinal, tiempo);
+            yield return null;
         }
     }
 
@@ -193,7 +225,7 @@ public class BookShelf : MonoBehaviour
     {
         yield return null;
 
-        if(book.interactorsSelecting.Count == 0)
+        if (book.interactorsSelecting.Count == 0)
         {
             Backposition();
             Debug.Log("Lo solto en el aire");
@@ -209,7 +241,6 @@ public class BookShelf : MonoBehaviour
         dropbook = true;
 
         Debug.Log("Solto Libro");
-        
 
         foreach (XRSocketInteractor socket in socketInteractorList)
         {
