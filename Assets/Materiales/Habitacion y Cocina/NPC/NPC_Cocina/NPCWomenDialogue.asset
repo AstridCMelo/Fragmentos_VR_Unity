@@ -16,7 +16,7 @@ MonoBehaviour:
   npcName: "Mam\xE1"
   playerName: Hijo
   npcPortrait: {fileID: 21300000, guid: f874aedf931c3204c896e05c4dd68b69, type: 3}
-  playerPortrait: {fileID: 0}
+  playerPortrait: {fileID: 21300000, guid: 21a13bcad58c6d54c8600928bbf01b1a, type: 3}
   dialogueblockNPC:
   - dialogueLinesNPC:
     - "Llegaste\u2026 pens\xE9 que te ibas a tardar m\xE1s. "

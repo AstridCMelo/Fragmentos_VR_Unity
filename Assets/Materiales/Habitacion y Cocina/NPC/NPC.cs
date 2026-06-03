@@ -74,6 +74,11 @@ public class NPC : MonoBehaviour, IInteractableNPC
         }
     }
 
+    public void Start()
+    {
+        MiniGamesState.Reset();
+    }
+
     public bool CanInteract()
     {
         return !isDialogueActive;

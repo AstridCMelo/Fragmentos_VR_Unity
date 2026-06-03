@@ -16,7 +16,7 @@ MonoBehaviour:
   npcName: "Pap\xE1"
   playerName: Hijo
   npcPortrait: {fileID: 21300000, guid: 58f02bd43b7941c4097314e84100bf5b, type: 3}
-  playerPortrait: {fileID: 0}
+  playerPortrait: {fileID: 21300000, guid: 21a13bcad58c6d54c8600928bbf01b1a, type: 3}
   dialogueblockNPC:
   - dialogueLinesNPC:
     - "Hola\u2026 \xBFotra vez dejando todo tirado? "
