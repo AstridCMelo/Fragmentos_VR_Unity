@@ -3529,7 +3529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2325586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2325586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -3551,6 +3551,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 125586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1819798607}
+    - targetCorrespondingSourceObject: {fileID: 125586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1819798612}
   m_SourcePrefab: {fileID: 100100000, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
 --- !u!4 &334286247 stripped
 Transform:
@@ -5227,10 +5230,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1275559003}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1275559003}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -14730,7 +14757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2325586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2325586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -14752,12 +14779,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 125586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 428055961}
+    - targetCorrespondingSourceObject: {fileID: 125586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1275559003}
   m_SourcePrefab: {fileID: 100100000, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
 --- !u!4 &1275559000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
   m_PrefabInstance: {fileID: 1275558999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1275559003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428055960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d411dc22a02044bbac68240d7b1ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineObject
+  hovermaterial: {fileID: 2100000, guid: dc2c9b08bb8735742a402430abf24f96, type: 2}
+  Nonhovermaterial: {fileID: 2100000, guid: da38ef1fd9d7d6a4ebf4dbb28b4e0043, type: 2}
 --- !u!1001 &1277409223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17187,10 +17231,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2030364495}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2030364495}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -21890,10 +21958,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1819798612}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1819798612}
+        m_TargetAssemblyTypeName: OutlineObject, Assembly-CSharp
+        m_MethodName: OnHoverExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -22044,6 +22136,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1819798612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819798605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d411dc22a02044bbac68240d7b1ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineObject
+  hovermaterial: {fileID: 2100000, guid: dc2c9b08bb8735742a402430abf24f96, type: 2}
+  Nonhovermaterial: {fileID: 2100000, guid: da38ef1fd9d7d6a4ebf4dbb28b4e0043, type: 2}
 --- !u!4 &1826015760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4151097385353945314, guid: 1c9b4e5370b407f4ea8489c4d7a47444, type: 3}
@@ -24272,7 +24378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2325586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2325586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -24294,12 +24400,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 125586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1415606749}
+    - targetCorrespondingSourceObject: {fileID: 125586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2030364495}
   m_SourcePrefab: {fileID: 100100000, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
 --- !u!4 &2030364494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 425586, guid: d8c1ecd27d8b494f99c904bd9a3be8bf, type: 3}
   m_PrefabInstance: {fileID: 2030364493}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2030364495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415606743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d411dc22a02044bbac68240d7b1ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineObject
+  hovermaterial: {fileID: 2100000, guid: dc2c9b08bb8735742a402430abf24f96, type: 2}
+  Nonhovermaterial: {fileID: 2100000, guid: da38ef1fd9d7d6a4ebf4dbb28b4e0043, type: 2}
 --- !u!1001 &2039301977
 PrefabInstance:
   m_ObjectHideFlags: 0
