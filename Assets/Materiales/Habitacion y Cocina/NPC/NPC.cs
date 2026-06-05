@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,6 +72,11 @@ public class NPC : MonoBehaviour, IInteractableNPC
             EndDialogue();
 
         }
+    }
+
+    public void Start()
+    {
+        MiniGamesState.Reset();
     }
 
     public bool CanInteract()

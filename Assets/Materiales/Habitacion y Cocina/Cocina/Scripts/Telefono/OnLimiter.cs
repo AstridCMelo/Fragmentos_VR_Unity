@@ -54,7 +54,7 @@ public class OnLimiter : MonoBehaviour
         {
             IXRSelectInteractor interactor = GrabNumber.firstInteractorSelecting;
             GrabNumber.interactionManager.SelectExit(interactor, GrabNumber);
-            Debug.Log("Soltó después de segundo");
+            Debug.Log("Soltï¿½ despuï¿½s de segundo");
         }
     }
 

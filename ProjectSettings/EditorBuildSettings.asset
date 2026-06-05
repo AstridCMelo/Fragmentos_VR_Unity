@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantallaCarga.unity
     guid: 43b8863c387012148b4a625e7ee97cc2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/0 (1) _.unity
     guid: 5ca13d7d13245e04685df410626095a1
   - enabled: 0
@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sala.unity
     guid: df2e2f86a8f24e748aff56cdb9abefbe
+  - enabled: 1
+    path: Assets/Scenes/0 (1).unity
+    guid: 72ac30758017a3a4bb79e90ba79bca27
+  - enabled: 1
+    path: Assets/Scenes/Barrio.unity
+    guid: d9cb89d9b57e0f644a657f5b66745bbc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 983c1949a6707514ebfd1fe2414df21f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}

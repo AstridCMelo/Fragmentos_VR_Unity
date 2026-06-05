@@ -2,28 +2,34 @@ using UnityEngine;
 
 public class CajonVR : MonoBehaviour
 {
-    public Transform objetoHijo; // Aquí arrastrarás el cuaderno desde el Inspector
+    public Transform objetoHijo; // El cuaderno (Notebook_Brown)
     public float distanciaZ = -0.4f;
     public float velocidad = 5f;
 
     private Vector3 cajonCerrado;
     private Vector3 cajonAbierto;
-    private Vector3 cuadernoCerrado;
-    private Vector3 cuadernoAbierto;
 
     private bool abierto = false;
+    private Rigidbody rbCuaderno;
+    private bool gravedadActivadaParaSiempre = false;
+    private Vector3 offsetInicial;
 
     void Start()
     {
-        // Posiciones del cajón
         cajonCerrado = transform.localPosition;
         cajonAbierto = cajonCerrado + new Vector3(0, 0, distanciaZ);
 
-        // Posiciones del cuaderno (si existe)
         if (objetoHijo != null)
         {
-            cuadernoCerrado = objetoHijo.localPosition;
-            cuadernoAbierto = cuadernoCerrado + new Vector3(0, 0, distanciaZ);
+            rbCuaderno = objetoHijo.GetComponent<Rigidbody>();
+            offsetInicial = objetoHijo.position - transform.position;
+
+            // Aseguramos congelarlo en el frame 1 antes de que caiga
+            if (rbCuaderno != null)
+            {
+                rbCuaderno.isKinematic = true;
+                rbCuaderno.useGravity = false;
+            }
         }
     }
 
@@ -31,26 +37,53 @@ public class CajonVR : MonoBehaviour
     {
         abierto = !abierto;
         StopAllCoroutines();
-        StartCoroutine(MoverTodo());
+        StartCoroutine(MoverTodoSuave());
     }
 
-    System.Collections.IEnumerator MoverTodo()
+    System.Collections.IEnumerator MoverTodoSuave()
     {
         Vector3 destinoCajon = abierto ? cajonAbierto : cajonCerrado;
-        Vector3 destinoCuaderno = abierto ? cuadernoAbierto : cuadernoCerrado;
+        float tiempo = 0;
+        Vector3 posInicialCajon = transform.localPosition;
 
-        while (Vector3.Distance(transform.localPosition, destinoCajon) > 0.001f)
+        while (tiempo < 1f)
         {
-            float step = Time.deltaTime * velocidad;
-            transform.localPosition = Vector3.Lerp(transform.localPosition, destinoCajon, step);
+            tiempo += Time.deltaTime * velocidad;
+            transform.localPosition = Vector3.Lerp(posInicialCajon, destinoCajon, tiempo);
 
-            if (objetoHijo != null)
-                objetoHijo.localPosition = Vector3.Lerp(objetoHijo.localPosition, destinoCuaderno, step);
+            if (gravedadActivadaParaSiempre)
+            {
+                yield break;
+            }
+
+            if (objetoHijo != null && !gravedadActivadaParaSiempre)
+            {
+                objetoHijo.position = transform.position + offsetInicial;
+            }
 
             yield return null;
         }
 
         transform.localPosition = destinoCajon;
-        if (objetoHijo != null) objetoHijo.localPosition = destinoCuaderno;
+    }
+
+    // Se activa al agarrarlo desde el evento del XR Grab Interactable
+    public void ActivarGravedadDesdeVR()
+    {
+        if (!gravedadActivadaParaSiempre)
+        {
+            gravedadActivadaParaSiempre = true;
+
+            if (rbCuaderno != null)
+            {
+                rbCuaderno.isKinematic = false;
+                rbCuaderno.useGravity = true;
+            }
+
+            Debug.Log("¡Cuaderno liberado! El script del cajón ya no lo tocará más.");
+
+            // Desactivamos este script para que no vuelva a evaluar al cuaderno nunca más
+            this.enabled = false;
+        }
     }
 }
