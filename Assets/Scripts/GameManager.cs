@@ -41,8 +41,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("RECUERDO COMPLETO");
 
-        if (uiFinal != null)
-            uiFinal.SetActive(true);
+        if(MiniGamesState.minigame1Completed != true)
+        {
+            if (uiFinal != null)
+                uiFinal.SetActive(true);
+        }
 
         if (puertaCuarto != null)
         {
